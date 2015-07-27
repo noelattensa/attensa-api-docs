@@ -81,16 +81,17 @@ curl -u adam:password https://localhost:8000/users
   },
   "users": [
     {
-    "id": "546e17fcd4c67da2547f5b61",
-    "firstName": "test",
-    "middleName": "j",
-    "lastName": "user",
-    "suffix": "sr",
-    "emailAddress": "foo@test.com",
-    "timeZone": "Europe/Paris",
-    "status": "ACTIVE",
-    "_links": {
-      "self": "http://api.attensa.net/users/546e17fcd4c67da2547f5b61"
+      "id": "546e17fcd4c67da2547f5b61",
+      "firstName": "test",
+      "middleName": "j",
+      "lastName": "user",
+      "suffix": "sr",
+      "emailAddress": "foo@test.com",
+      "timeZone": "Europe/Paris",
+      "status": "ACTIVE",
+      "_links": {
+        "self": "http://api.attensa.net/users/546e17fcd4c67da2547f5b61"
+      }
     }
   ]
 }
@@ -100,7 +101,7 @@ This endpoint retrieves a paged list of users.
 
 ### Request
 
-`GET http://api.attensa.com/users`
+`GET https://api.attensa.com/users`
 
 ### Response
 
@@ -116,5 +117,65 @@ term | A search term to narrow the list of users returned | No | String | `null`
 sort | Field to sort the results on | No | firstName, lastName or emailAddress | emailAddress
 sortDirection | Sort ascending or descending | No | ASC or DESC | ASC
 
-<aside class="info">See the paging metadata specification for more information on the `_paging` property</aside>
+<aside class="notice">
+See the paging metadata specification for more information on the `_paging` property
+</aside>
+
+## Create a new stream
+
+```shell
+curl -u username:password \
+     -H "Content-Type: application/json" \
+     -X POST \
+     -d '{
+       "firstName": "test",
+       "middleName": "j",
+       "lastName": "user",
+       "suffix": "sr",
+       "emailAddress": "foo@test.com",
+       "timeZone": "Europe/Paris",
+       "status": "ACTIVE"
+     }' \
+     https://api.attensa.net/users
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "id": "546e17fcd4c67da2547f5b61",
+  "firstName": "test",
+  "middleName": "j",
+  "lastName": "user",
+  "suffix": "sr",
+  "emailAddress": "foo@test.com",
+  "timeZone": "Europe/Paris",
+  "status": "ACTIVE",
+  "_links": {
+    "self": "http://api.attensa.net/users/546e17fcd4c67da2547f5b61"
+  }
+}
+```
+
+This endpoint creates a new user.
+
+### Request
+
+`POST https://api.attensa.com/users`
+
+### Response
+
+Status code `201`
+
+### JSON request properties
+
+Parameter | Description | Required | Format | Default
+--------- | ----------- | -------- | ------ | -------
+firstName | First name | Yes | String | n/a
+middleName | Middle name | No | String | `null`
+lastName | Last name | Yes | String | n/a
+suffix | Suffix (e.g. JR, SR) | No | String | `null`
+emailAddress | Email Address (unique) | Yes | String in valid email format | n/a
+timeZone | Supported time zone | Supported time zone string | `null`
+status | User's status | Yes | ACTIVE, INVITED or INACTIVE | ACTIVE
 
