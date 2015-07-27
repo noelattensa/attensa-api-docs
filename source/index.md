@@ -1,168 +1,120 @@
 ---
-title: API Reference
-
-language_tabs:
-  - shell
-  - ruby
-  - python
+title: Attensa API Reference
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='http://github.com/tripit/slate'>Documentation Powered by Slate</a>
-
-includes:
-  - errors
+  - <a href='http://attensa.com/contact-us/'>Contact us about getting a developer account</a>
 
 search: true
 ---
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
-
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
-
-This example API documentation page was created with [Slate](http://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
+Welcome to the Attensa API!
 
 # Authentication
 
-> To authorize, use this code:
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
+> To authorize, pass your username and password using basic auth:
 
 ```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
+curl -u username:password http://api.attensa.net/endpoint
 ```
 
-> Make sure to replace `meowmeowmeow` with your API key.
+Attensa uses [HTTP basic authentication](https://en.wikipedia.org/wiki/Basic_access_authentication).  You can obtain a username and password by contacting us [here](http://attensa.com/contact-us/)
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+# Users
 
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-
-# Kittens
-
-## Get All Kittens
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
+## Get a specific user
 
 ```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Isis",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
-```
-
-This endpoint retrieves all kittens.
-
-### HTTP Request
-
-`GET http://example.com/api/kittens`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
+curl -u adam:password https://api.attensa.net/users/userId
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
 {
-  "id": 2,
-  "name": "Isis",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
+  "id": "546e17fcd4c67da2547f5b61",
+  "firstName": "test",
+  "middleName": "j",
+  "lastName": "user",
+  "suffix": "sr",
+  "emailAddress": "foo@test.com",
+  "timeZone": "Europe/Paris",
+  "status": "ACTIVE",
+  "_links": {
+    "self": "http://api.attensa.net/users/546e17fcd4c67da2547f5b61"
+  }
 }
 ```
 
-This endpoint retrieves a specific kitten.
+This endpoint retrieves a specific user.
 
-<aside class="warning">If you're not using an administrator API key, note that some kittens will return 403 Forbidden if they are hidden for admins only.</aside>
+### Request
 
-### HTTP Request
+`GET http://api.attensa.com/users/{userId}`
 
-`GET http://example.com/kittens/<ID>`
+### Response
 
-### URL Parameters
+Status code `200`
 
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
+<aside class="notice">
+* timeZone will be one of the supported time zones specified here
+* status will be one of ACTIVE, INVITED or INACTIVE
+</aside>
+
+## Get a list of users
+
+```shell
+curl -u adam:password https://localhost:8000/users
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "_paging": {
+    "totalElementCount": 42,
+    "pageCount": 3,
+    "requestedPageSize": 20,
+    "elementCount": 20,
+    "page": 0,
+  },
+  "users": [
+    {
+    "id": "546e17fcd4c67da2547f5b61",
+    "firstName": "test",
+    "middleName": "j",
+    "lastName": "user",
+    "suffix": "sr",
+    "emailAddress": "foo@test.com",
+    "timeZone": "Europe/Paris",
+    "status": "ACTIVE",
+    "_links": {
+      "self": "http://api.attensa.net/users/546e17fcd4c67da2547f5b61"
+    }
+  ]
+}
+```
+
+This endpoint retrieves a paged list of users.
+
+### Request
+
+`GET http://api.attensa.com/users`
+
+### Response
+
+Status code `200`
+
+### Query parameters
+
+Parameter | Description | Required | Format | Default
+--------- | ----------- | -------- | ------ | -------
+page | The page number to retrieve | No | Integer | 0
+rows | Number of users in each page | No | Integer | 20
+term | A search term to narrow the list of users returned | No | String | `null`
+sort | Field to sort the results on | No | firstName, lastName or emailAddress | emailAddress
+sortDirection | Sort ascending or descending | No | ASC or DESC | ASC
+
+<aside class="info">See the paging metadata specification for more information on the `_paging` property</aside>
 
