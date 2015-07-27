@@ -3,7 +3,7 @@
 ## Get a specific user
 
 ```shell
-curl -u adam:password https://api.attensa.net/users/userId
+curl -u adam:password https://api.attensa.net/users/{userId}
 ```
 
 > The above command returns JSON structured like this:
@@ -153,3 +153,21 @@ suffix | Suffix (e.g. JR, SR) | No | String | `null`
 emailAddress | Email Address (unique) | Yes | String in valid email format | n/a
 timeZone | Supported time zone | Supported time zone string | `null`
 status | User's status | Yes | ACTIVE, INVITED or INACTIVE | ACTIVE
+
+## Delete a user
+
+```shell
+curl -u username:password \
+     -X DELETE \
+     https://api.attensa.net/users/{userId}
+```
+
+This endpoint deletes an existing user
+
+### Request
+
+`DELETE https://api.attensa.com/users/{userId}`
+
+### Response
+
+Status code `204`, empty body
