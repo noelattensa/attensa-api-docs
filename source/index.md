@@ -118,7 +118,7 @@ sort | Field to sort the results on | No | firstName, lastName or emailAddress |
 sortDirection | Sort ascending or descending | No | ASC or DESC | ASC
 
 <aside class="notice">
-See the paging metadata specification for more information on the `_paging` property
+See the [paging metadata specification](#Paging format) for more information on the `_paging` property
 </aside>
 
 ## Create a new stream
@@ -178,4 +178,36 @@ suffix | Suffix (e.g. JR, SR) | No | String | `null`
 emailAddress | Email Address (unique) | Yes | String in valid email format | n/a
 timeZone | Supported time zone | Supported time zone string | `null`
 status | User's status | Yes | ACTIVE, INVITED or INACTIVE | ACTIVE
+
+# Paging
+
+## Paging format
+
+> Paged responses return a _paging element
+
+```json
+{
+  "_paging": {
+    "totalElementCount": 42,
+    "pageCount": 3,
+    "requestedPageSize": 20,
+    "elementCount": 20,
+    "page": 0
+  },
+  "users": [
+    { "arrayOfUsers": "goes here" }
+  ]
+}
+```
+
+Paged responses will return a `_paging` element with paging metadata as shown to the right. The return data will be named for the type of data being responded to (e.g. requesting users will return a `users` array while requesting streams will return a `streams` array)
+
+Paging metadata:
+* a`totalElementCount`: The total number of elements across all pages
+* `pageCount`: The number of pages
+* `requestedPageSize`: The requested page size
+* `elementCount`: The number of elements returned in the current page.  Not that in some cases this may be less than the requested page size due to de-duping rules or filters
+* `page`: The current page number
+
+
 
