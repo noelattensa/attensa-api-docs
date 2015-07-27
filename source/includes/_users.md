@@ -94,7 +94,7 @@ term | A search term to narrow the list of users returned | No | String | `null`
 sort | Field to sort the results on | No | firstName, lastName or emailAddress | emailAddress
 sortDirection | Sort ascending or descending | No | ASC or DESC | ASC
 
-See the [paging metadata specification](#Paging format) for more information on the `_paging` property
+See the [paging metadata specification](#paging-format) for more information on the `_paging` property
 
 ## Create a new user
 
