@@ -80,11 +80,7 @@ This endpoint retrieves a paged list of users.
 
 `GET https://api.attensa.com/users`
 
-### Response
-
-Status code `200`
-
-### Query parameters
+### Request query parameters
 
 Parameter | Description | Required | Format | Default
 --------- | ----------- | -------- | ------ | -------
@@ -95,6 +91,11 @@ sort | Field to sort the results on | No | firstName, lastName or emailAddress |
 sortDirection | Sort ascending or descending | No | ASC or DESC | ASC
 
 See the [paging metadata specification](#paging-format) for more information on the `_paging` property
+
+### Response
+
+Status code `200`
+
 
 ## Create a new user
 
@@ -138,10 +139,6 @@ This endpoint creates a new user.
 
 `POST https://api.attensa.com/users`
 
-### Response
-
-Status code `201`
-
 ### JSON request properties
 
 Parameter | Description | Required | Format | Default
@@ -153,6 +150,69 @@ suffix | Suffix (e.g. JR, SR) | No | String | `null`
 emailAddress | Email Address (unique) | Yes | String in valid email format | n/a
 timeZone | Supported time zone | Supported time zone string | `null`
 status | User's status | Yes | ACTIVE, INVITED or INACTIVE | ACTIVE
+
+### Response
+
+Status code `201`
+
+## Update an existing user
+
+```shell
+curl -u username:password \
+     -H "Content-Type: application/json" \
+     -X PUT \
+     -d '{
+       "firstName": "test",
+       "middleName": "j",
+       "lastName": "user",
+       "suffix": "sr",
+       "emailAddress": "foo@test.com",
+       "timeZone": "Europe/Paris",
+       "status": "ACTIVE"
+     }' \
+     https://api.attensa.net/users
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "id": "546e17fcd4c67da2547f5b61",
+  "firstName": "test",
+  "middleName": "j",
+  "lastName": "user",
+  "suffix": "sr",
+  "emailAddress": "foo@test.com",
+  "timeZone": "Europe/Paris",
+  "status": "ACTIVE",
+  "_links": {
+    "self": "http://api.attensa.net/users/546e17fcd4c67da2547f5b61"
+  }
+}
+```
+
+This endpoint updates an existing user.
+
+### Request
+
+`PUT https://api.attensa.com/users/{userId}`
+
+### JSON request properties
+No fields are required, but at least one must be provided for update. Updates are applied incrementally in a PATCH-like manner, so omitted fields will not be changed.
+
+Parameter | Description | Required | Format
+--------- | ----------- | -------- | ------
+firstName | First name | No | String
+middleName | Middle name | No | String
+lastName | Last name | No | String
+suffix | Suffix (e.g. JR, SR) | No | String
+emailAddress | Email Address (unique) | Yes | String in valid email format
+timeZone | Supported time zone | Supported time zone string
+status | User's status | Yes | ACTIVE, INVITED or INACTIVE
+
+### Response
+
+Status code `200`
 
 ## Delete a user
 
