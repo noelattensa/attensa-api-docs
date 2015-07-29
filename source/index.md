@@ -8,6 +8,7 @@ search: true
 
 includes:
   - authentication
+  - streams
   - users
   - paging
 ---
