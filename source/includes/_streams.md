@@ -171,7 +171,7 @@ curl -u username:password \
 }
 ```
 
-Update an existing stream.  Updated are applied in a incremental PATCH-like manner, so the entire stream resource does not need to be supplied, only the properties that are changing.
+Update an existing stream.  Updates are applied in a incremental PATCH-like manner, so the entire stream resource does not need to be supplied, only the properties that are changing.
 
 ### Request
 
