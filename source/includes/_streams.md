@@ -1,5 +1,67 @@
 # Streams
 
+## GET /streams
+
+```shell
+curl -u username:password \
+     -X GET \
+     -d page=0 \
+     -d published=true \
+     -d rows=20 \
+     -d term=test \
+     -d type=COLLECTION \
+     https://api.attensa.net/streams
+```
+
+> Status code 200 with response as follows:
+
+```json
+{
+  "_paging": {
+    "totalElementCount": 1,
+    "pageCount": 1,
+    "requestedPageSize": 20,
+    "elementCount": 1,
+    "page": 0
+  },
+  "streams": [{
+    "title": "Test Stream 01",
+    "groupIsSubscribed": true,
+    "description": "Description 01",
+    "ownerId": "55414a36e4b0436b6280e668",
+    "type": "COLLECTION",
+    "emailPostingEnabled": true,
+    "openForReading": true,
+    "openForPosting": true,
+    "streamEmailAddress": "test.stream.01@email.attensa.net",
+    "rssEnabled": false,
+    "categoryIds" : ["55414a36e4b0436b6280e668", "823hg4asf34b0436b6280e668"]
+  }]
+}
+```
+
+Get a paged list of streams.
+
+### Request
+
+`GET https://api.attensa.com/streams`
+
+### Request query parameters
+
+Parameter | Description | Required | Format | Default
+--------- | ----------- | -------- | ------ | -------
+page | The page number to retrieve | No | Integer | 0
+published | Filter stream list to published or unpublished streams. Omit for all streams. | No | Boolean | `null`
+rows | Number of streams in each page | No | Integer | 20
+term | A search term to narrow the list of streams returned | No | String | `null`
+type | Filter results to a specific stream type | No | `COLLECTION`, `RSS`, `TWITTER`, `XML` | `null`
+
+### Response
+
+Status code `200`
+
+See the [paging metadata specification](#paging-format) for more information on the `_paging` property
+
 ## GET /streams/{streamId}
 
 ```shell
