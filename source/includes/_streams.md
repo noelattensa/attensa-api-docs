@@ -5,7 +5,6 @@
 ```shell
 curl -u username:password https://api.attensa.net/streams/{streamId}
 ```
-
 > The above command returns JSON structured like this:
 
 ```json
@@ -61,15 +60,13 @@ curl -u username:password \
            "password": "myPasswordForSecuredRSSFeed",
        },
        "emailPostingEnabled": false,
-       "streamEmailAddress": "test.stream.01@email.attensa.net",
        "openForReading": true,
        "openForPosting": true,
        "rssEnabled": false,
        "categoryIds" : ["55414a36e4b0436b6280e668"]
      }' \
-     https://api.attensa.net/users
+     https://api.attensa.net/streams
 ```
-
 > The above command returns JSON structured like this:
 
 ```json
@@ -78,7 +75,7 @@ curl -u username:password \
   "title": "Test Stream 01",
   "ownerId": "55414a36e4b0436b6280e668",
   "description" : "Description 01",
-  "type": "COLLECTION",
+  "type": "RSS",
   "source": {
       "uri": "http://slashdot.org/rss",
       "username": "myUserNameForSecuredRSSFeed"
@@ -123,3 +120,84 @@ categoryIds | Categories to put the stream in | Yes (empy array for no categorie
 ### Response
 
 Status code `201`
+
+## PUT /streams/{streamId}
+
+```shell
+curl -u username:password \
+     -H "Content-Type: application/json" \
+     -X POST \
+     -d '{
+       "title": "Test Stream 01",
+       "description": "Description 01",
+       "ownerId": "55414a36e4b0436b6280e668",
+       "source": {
+           "uri": "http://slashdot.org/rss",
+           "username": "myUserNameForSecuredRSSFeed",
+           "password": "myPasswordForSecuredRSSFeed",
+       },
+       "emailPostingEnabled": false,
+       "streamEmailAddress": "test.stream.01@email.attensa.net",
+       "openForReading": true,
+       "openForPosting": true,
+       "rssEnabled": false,
+       "categoryIds" : ["55414a36e4b0436b6280e668"]
+     }' \
+     https://api.attensa.net/streams/{streamId}
+```
+> The above command returns JSON structured like this:
+
+```json
+{
+  "id": "546e17fcd4c67da2547f5b61",
+  "title": "Test Stream 01",
+  "ownerId": "55414a36e4b0436b6280e668",
+  "description" : "Description 01",
+  "type": "RSS",
+  "source": {
+      "uri": "http://slashdot.org/rss",
+      "username": "myUserNameForSecuredRSSFeed"
+  },
+  "emailPostingEnabled": false,
+  "openForReading": true,
+  "openForPosting": true,
+  "rssEnabled": false,
+  "catgoryIds" : ["55414a36e4b0436b6280e668"],
+  "itemsCount": 0,
+  "followersCount": 0,
+  "_links": {
+        "self": "https://api.attensa.net/streams/546e17fcd4c67da2547f5b61"
+    }
+}
+```
+
+Update an existing stream.  Updated are applied in a incremental PATCH-like manner, so the entire stream resource does not need to be supplied, only the properties that are changing.
+
+### Request
+
+`PUT https://api.attensa.net/streams`
+
+### JSON body request properties
+
+Parameter | Description | Required | Format | Default
+--------- | ----------- | -------- | ------ | -------
+title | Stream Title | No | String | n/a
+description | Stream description | No | String | n/a
+ownerId | User id of stream owner | No | String of valid user id | n/a
+source:uri | Uri of rss feed. Only supply for type RSS streams | No | String | n/a
+source:username | Basic auth username for secured rss feed. Only supply for type RSS streams. | No | String | n/a
+source:password | Basic auth password for secured rss feed. Only supply for type RSS streams. | No | String | n/a
+emailPostingEnabled | Allow posting to COLLECTION stream via email. | No | Boolean | n/a
+streamEmailAddress | Email address to for stream if emailPosting is enabled. Only set for collection streams | No | Valid email string | n/a
+openForReading | Allow all users to read this stream | No | Boolean | n/a
+openForPosting | Allow all users to post content to a COLLECTION stream | No | Boolean | n/a
+rssEnabled | Allow public access to an RSS feed of this stream | No | Boolean | n/a
+categoryIds | Categories to put the stream in | No | [String] | n/a
+
+<aside class="notice">Stream type can not be updated.  Once a stream is created it's type is immutable.</aside>
+<aside class="notice">All categories can be removed by sending an empty category array (<code>"categories": []</code>)</aside>
+<aside class="notice">If updating a secured source, all source fields must be sent (uri, username and password). If no username or password is supplied, but a source uri is, then any existing credentials will be removed.</aside>
+
+### Response
+
+Status code `200`
