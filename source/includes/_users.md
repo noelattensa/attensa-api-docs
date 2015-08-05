@@ -1,47 +1,6 @@
 # Users
 
-## Get a specific user
-
-```shell
-curl -u adam:password https://api.attensa.net/users/{userId}
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": "546e17fcd4c67da2547f5b61",
-  "firstName": "test",
-  "middleName": "j",
-  "lastName": "user",
-  "suffix": "sr",
-  "emailAddress": "foo@test.com",
-  "timeZone": "Europe/Paris",
-  "status": "ACTIVE",
-  "_links": {
-    "self": "http://api.attensa.net/users/546e17fcd4c67da2547f5b61"
-  }
-}
-```
-
-This endpoint retrieves a specific user.
-
-### Request
-
-`GET http://api.attensa.com/users/{userId}`
-
-### Response
-
-Status code `200`
-
-<aside class="notice">
-
-* timeZone will be one of the supported time zones specified here
-* status will be one of ACTIVE, INVITED or INACTIVE
-
-</aside>
-
-## Get a list of users
+## GET /users
 
 ```shell
 curl -u adam:password https://localhost:8000/users
@@ -98,22 +57,10 @@ Status code `200`
 
 See the [paging metadata specification](#paging-format) for more information on the `_paging` property
 
-## Create a new user
+## GET /users/{userId}
 
 ```shell
-curl -u username:password \
-     -H "Content-Type: application/json" \
-     -X POST \
-     -d '{
-       "firstName": "test",
-       "middleName": "j",
-       "lastName": "user",
-       "suffix": "sr",
-       "emailAddress": "foo@test.com",
-       "timeZone": "Europe/Paris",
-       "status": "ACTIVE"
-     }' \
-     https://api.attensa.net/users
+curl -u adam:password https://api.attensa.net/users/{userId}
 ```
 
 > The above command returns JSON structured like this:
@@ -134,106 +81,17 @@ curl -u username:password \
 }
 ```
 
-This endpoint creates a new user.
+This endpoint retrieves a specific user.
 
 ### Request
 
-`POST https://api.attensa.com/users`
-
-### JSON request properties
-
-Parameter | Description | Required | Format | Default
---------- | ----------- | -------- | ------ | -------
-firstName | First name | Yes | String | n/a
-middleName | Middle name | No | String | `null`
-lastName | Last name | Yes | String | n/a
-suffix | Suffix (e.g. JR, SR) | No | String | `null`
-emailAddress | Email Address (unique) | Yes | String in valid email format | n/a
-timeZone | Supported time zone | Supported time zone string | `null`
-status | User's status | Yes | ACTIVE, INVITED or INACTIVE | ACTIVE
-
-### Response
-
-Status code `201`
-
-## Update an existing user
-
-```shell
-curl -u username:password \
-     -H "Content-Type: application/json" \
-     -X PUT \
-     -d '{
-       "firstName": "test",
-       "middleName": "j",
-       "lastName": "user",
-       "suffix": "sr",
-       "emailAddress": "foo@test.com",
-       "timeZone": "Europe/Paris",
-       "status": "ACTIVE"
-     }' \
-     https://api.attensa.net/users
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": "546e17fcd4c67da2547f5b61",
-  "firstName": "test",
-  "middleName": "j",
-  "lastName": "user",
-  "suffix": "sr",
-  "emailAddress": "foo@test.com",
-  "timeZone": "Europe/Paris",
-  "status": "ACTIVE",
-  "_links": {
-    "self": "http://api.attensa.net/users/546e17fcd4c67da2547f5b61"
-  }
-}
-```
-
-This endpoint updates an existing user.
-
-### Request
-
-`PUT https://api.attensa.com/users/{userId}`
-
-### JSON request properties
-No fields are required, but at least one must be provided for update. Updates are applied incrementally in a PATCH-like manner, so omitted fields will not be changed.
-
-Parameter | Description | Required | Format
---------- | ----------- | -------- | ------
-firstName | First name | No | String
-middleName | Middle name | No | String
-lastName | Last name | No | String
-suffix | Suffix (e.g. JR, SR) | No | String
-emailAddress | Email Address (unique) | Yes | String in valid email format
-timeZone | Supported time zone | Supported time zone string
-status | User's status | Yes | ACTIVE, INVITED or INACTIVE
+`GET http://api.attensa.com/users/{userId}`
 
 ### Response
 
 Status code `200`
 
-## Delete a user
-
-```shell
-curl -u username:password \
-     -X DELETE \
-     https://api.attensa.net/users/{userId}
-```
-
-This endpoint deletes an existing user
-
-### Request
-
-`DELETE https://api.attensa.com/users/{userId}`
-
-### Response
-
-Status code `204`, empty body
-
-## Get a list of streams a user follows
+## GET /users/{userId}/streams
 
 ```shell
 curl -u username:password \
@@ -313,7 +171,7 @@ Four properties are added to the normal stream objects returned in the `streams`
 * userIsSubscribed
 * userIsSubscribedViaGroup
 
-## Get a list of briefings a user is subscribed to
+## GET /users/{userId}/briefings
 
 ```shell
 curl -u username:password \
@@ -406,6 +264,64 @@ Four properties are added to the normal stream objects returned in briefings arr
 * userIsSubscribed
 * userIsSubscribedViaGroup
 
+## POST /users
+
+```shell
+curl -u username:password \
+     -H "Content-Type: application/json" \
+     -X POST \
+     -d '{
+       "firstName": "test",
+       "middleName": "j",
+       "lastName": "user",
+       "suffix": "sr",
+       "emailAddress": "foo@test.com",
+       "timeZone": "Europe/Paris",
+       "status": "ACTIVE"
+     }' \
+     https://api.attensa.net/users
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "id": "546e17fcd4c67da2547f5b61",
+  "firstName": "test",
+  "middleName": "j",
+  "lastName": "user",
+  "suffix": "sr",
+  "emailAddress": "foo@test.com",
+  "timeZone": "Europe/Paris",
+  "status": "ACTIVE",
+  "_links": {
+    "self": "http://api.attensa.net/users/546e17fcd4c67da2547f5b61"
+  }
+}
+```
+
+This endpoint creates a new user.
+
+### Request
+
+`POST https://api.attensa.com/users`
+
+### JSON request properties
+
+Parameter | Description | Required | Format | Default
+--------- | ----------- | -------- | ------ | -------
+firstName | First name | Yes | String | n/a
+middleName | Middle name | No | String | `null`
+lastName | Last name | Yes | String | n/a
+suffix | Suffix (e.g. JR, SR) | No | String | `null`
+emailAddress | Email Address (unique) | Yes | String in valid email format | n/a
+timeZone | Supported time zone | Supported time zone string | `null`
+status | User's status | Yes | ACTIVE, INVITED or INACTIVE | ACTIVE
+
+### Response
+
+Status code `201`
+
 ## POST /users/{userId}/streams
 
 ```shell
@@ -435,3 +351,80 @@ subscribeToBriefing | Subscribe the user to the briefing | No | Boolean | `false
 ### Response
 
 Status code `204` with empty body
+
+## PUT /users/{userId}
+
+```shell
+curl -u username:password \
+     -H "Content-Type: application/json" \
+     -X PUT \
+     -d '{
+       "firstName": "test",
+       "middleName": "j",
+       "lastName": "user",
+       "suffix": "sr",
+       "emailAddress": "foo@test.com",
+       "timeZone": "Europe/Paris",
+       "status": "ACTIVE"
+     }' \
+     https://api.attensa.net/users
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "id": "546e17fcd4c67da2547f5b61",
+  "firstName": "test",
+  "middleName": "j",
+  "lastName": "user",
+  "suffix": "sr",
+  "emailAddress": "foo@test.com",
+  "timeZone": "Europe/Paris",
+  "status": "ACTIVE",
+  "_links": {
+    "self": "http://api.attensa.net/users/546e17fcd4c67da2547f5b61"
+  }
+}
+```
+
+This endpoint updates an existing user.
+
+### Request
+
+`PUT https://api.attensa.com/users/{userId}`
+
+### JSON request properties
+No fields are required, but at least one must be provided for update. Updates are applied incrementally in a PATCH-like manner, so omitted fields will not be changed.
+
+Parameter | Description | Required | Format
+--------- | ----------- | -------- | ------
+firstName | First name | No | String
+middleName | Middle name | No | String
+lastName | Last name | No | String
+suffix | Suffix (e.g. JR, SR) | No | String
+emailAddress | Email Address (unique) | Yes | String in valid email format
+timeZone | Supported time zone | Supported time zone string
+status | User's status | Yes | ACTIVE, INVITED or INACTIVE
+
+### Response
+
+Status code `200`
+
+## DELETE /user/{userId}
+
+```shell
+curl -u username:password \
+     -X DELETE \
+     https://api.attensa.net/users/{userId}
+```
+
+This endpoint deletes an existing user
+
+### Request
+
+`DELETE https://api.attensa.com/users/{userId}`
+
+### Response
+
+Status code `204`, empty body
