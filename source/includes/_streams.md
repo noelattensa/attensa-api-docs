@@ -26,8 +26,8 @@ curl -u username:password https://api.attensa.net/streams/{streamId}
   "streamEmailAddress": "test.stream.01@email.attensa.net",
   "rssEnabled": false,
   "catgoryIds" : ["55414a36e4b0436b6280e668", "823hg4asf34b0436b6280e668"],
-  "numberOfItems": 0,
-  "numberOfFollowers": 0,
+  "itemsCount": 0,
+  "followersCount": 0,
   "_links": {
         "self": "https://api.attensa.net/streams/546e17fcd4c67da2547f5b61"
     }
@@ -89,8 +89,8 @@ curl -u username:password \
   "openForPosting": true,
   "rssEnabled": false,
   "catgoryIds" : ["55414a36e4b0436b6280e668"],
-  "numberOfItems": 0,
-  "numberOfFollowers": 0,
+  "itemsCount": 0,
+  "followersCount": 0,
   "_links": {
         "self": "https://api.attensa.net/streams/546e17fcd4c67da2547f5b61"
     }

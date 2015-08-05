@@ -56,7 +56,7 @@ curl -u adam:password https://localhost:8000/users
     "pageCount": 3,
     "requestedPageSize": 20,
     "elementCount": 20,
-    "page": 0,
+    "page": 0
   },
   "users": [
     {
@@ -307,6 +307,99 @@ Status code `200`
 See the [paging metadata specification](#paging-format) for more information on the `_paging` property
 
 Four properties are added to the normal stream objects returned in the `streams` array that specify the user's relationship with the stream:
+
+* userIsFollowing
+* userIsFollowingViaGroup
+* userIsSubscribed
+* userIsSubscribedViaGroup
+
+## Get a list of briefings a user is subscribed to
+
+```shell
+curl -u username:password \
+     -X GET \
+     -d rows=20 \
+     -d page=0 \
+     https://api.attensa.net/users/{userId}/briefings
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "_paging": {
+    "elementCount": 1,
+    "page": 0,
+    "pageCount": 1,
+    "requestedPageSize": 20,
+    "totalElementCount": 1
+  },
+  "briefings": [
+    {
+      "subject": "My email subject line!",
+      "description": "Some special message used by template.",
+      "schedule": {
+          "startDate": "2015-07-30",
+          "stopDate": "2015-08-31",
+          "sendHour": "15",
+          "sendMinute": "30",
+          "frequency": "WEEKLY",
+          "interval": 1,
+          "sendDays":["MO","TU", "WE", "TH", "FR"],
+          "timeZone": "US/Pacific"
+      },
+      "templateId": "54b58250e4b0ec83add2661e",
+      "stream": {
+        "id": "546e17fcd4c67da2547f5b61",
+        "title": "Test Stream 01",
+        "ownerId": "55414a36e4b0436b6280e668",
+        "description" : "Description 01",
+        "type": "RSS",
+        "source": {
+            "uri": "http://slashdot.org/rss"
+        },
+        "emailPostingEnabled": false,
+        "openForReading": true,
+        "openForPosting": false,
+        "streamEmailAddress": "test.stream.01@email.attensa.net",
+        "rssEnabled": false,
+        "catgoryIds" : ["55414a36e4b0436b6280e668", "823hg4asf34b0436b6280e668"],
+        "itemsCount": 0,
+        "followersCount": 0,
+        "userIsFollowing": true,
+        "userIsFollowingViaGroup": false,
+        "userIsSubscribed": true,
+        "userIsSubscribedViaGroup": false,
+        "_links": {
+            "self": "https://api.attensa.net/streams/546e17fcd4c67da2547f5b61"
+        }
+      }
+    }
+  ]
+}
+```
+
+This endpoint retrives a list of briefings that a user is subscribed to
+
+### Request
+
+`GET https://api.attensa.com/users/{userId}/briefings`
+
+### Request query parameters
+
+Parameter | Description | Required | Format | Default
+--------- | ----------- | -------- | ------ | -------
+page | The page number to retrieve | No | Integer | 0
+rows | Number of users in each page | No | Integer | 20
+
+
+### Response
+
+Status code `200`
+
+See the [paging metadata specification](#paging-format) for more information on the `_paging` property
+
+Four properties are added to the normal stream objects returned in briefings array that specify the user's relationship with the stream:
 
 * userIsFollowing
 * userIsFollowingViaGroup
