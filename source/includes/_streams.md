@@ -274,3 +274,44 @@ Get briefing information for a specific stream
 ### Response
 
 Status code `200`
+
+## POST /streams/{streamId}/items
+
+```shell
+curl -u username:password \
+     -H "Content-Type: application/json" \
+     -X POST \
+     -d '{
+       "author": "John Doe",
+       "description": "Description 01",
+       "sourceUrl": "http://google.com",
+       "title": "Test item 01"
+     }' \
+     https://api.attensa.net/streams/{streamId}/items
+```
+> Status code 202 with response as follows:
+
+```json
+"Item successfully queued"
+```
+
+Post an item to a COLLECTION stream.
+
+### Request
+
+`POST https://api.attensa.net/streams/{streamId}/items`
+
+### JSON request body parameters
+
+Parameter | Description | Required | Format | Default
+--------- | ----------- | -------- | ------ | -------
+author | The author name of the item | No | String | `null`
+description | The body of the item. | Yes | String | n/a
+sourceUrl | Url of the item to link to | No | String | `null`
+title | Item title | Yes | String | n/a
+
+### Response
+
+Status code `200`
+
+<aside class="notice">Item creation is asynchronous.  While items are typically created whithin a few seconds, there is no guaranteed time frame for when a posted item will be available. </aside>
