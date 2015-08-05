@@ -222,3 +222,55 @@ Delete an existing stream from the system.  All users will be un-followed and un
 ### Response
 
 Status code `204` with empty body
+
+## GET /streams/{streamId}/briefing
+
+```shell
+curl -u username:password https://api.attensa.net/streams/{streamId}/briefing
+```
+> Status code 200 with json structured as follows:
+
+```json
+{
+  "description": "javascript news",
+  "templateId": "54eba226e4b050dd8b9c1099",
+  "title": "DailyJS",
+  "schedule": {
+    "frequency": "DAILY",
+    "interval": 2,
+    "sendHour": 10,
+    "sendMinute": 40,
+    "startDate": "2015-08-08",
+    "timeZone": "US/Pacific"
+  },
+  "stream": {
+    "categoryIds": ["54eba224e4b050dd8b9c1096"],
+    "emailPostingEnabled": false,
+    "id": "5519ae56e4b0c0419a88bae1",
+    "numberOfFollowers": 0,
+    "numberOfItems": 111,
+    "openForPosting": false,
+    "openForReading": true,
+    "ownerId": "54da7849e4b02386a4658e5d",
+    "rssEnabled": true,
+    "source": {
+        "uri": "http://feeds.feedburner.com/dailyjs"
+    },
+    "title": "DailyJS",
+    "type": "RSS",
+    "_links": {
+        "self": "http://localhost:8000/streams/5519ae56e4b0c0419a88bae1"
+    }
+  }
+}
+```
+
+Get briefing information for a specific stream
+
+### Request
+
+`GET https://api.attensa.net/streams/{streamId}/briefing`
+
+### Response
+
+Status code `200`
