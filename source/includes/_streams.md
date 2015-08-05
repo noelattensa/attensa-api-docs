@@ -274,7 +274,7 @@ title | Item title | Yes | String | n/a
 
 ### Response
 
-Status code `200`
+Status code `202`
 
 <aside class="notice">Item creation is asynchronous.  While items are typically created whithin a few seconds, there is no guaranteed time frame for when a posted item will be available. </aside>
 
