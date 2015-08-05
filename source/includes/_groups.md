@@ -374,6 +374,37 @@ id | Id of the user that should be added to the group | Yes | String | n/a
 
 Status code `201`
 
+## POST /groups/{groupId}/streams
+
+```shell
+curl -u username:password \
+     -H "Content-Type: application/json" \
+     -X POST \
+     -d '{
+       "streamId": "559bf709e4b008a9a53293c3",
+       "subscribeToBriefing": true,
+     }' \
+     https://api.attensa.net/groups/{groupId}/streams
+```
+> Status code 204 with empty body
+
+Set a grop to follow a stream and optionally subscribe to it's briefing
+
+### Request
+
+`POST https://api.attensa.net/groups/{groupId}/streams`
+
+### JSON request body
+
+Parameter | Description | Required | Format | Default
+--------- | ----------- | -------- | ------ | -------
+streamId | Id of the stream to follow | Yes | String | n/a
+subscribeToBriefing | subscribe the group to the streams briefing | No | Boolean | false
+
+### Response
+
+Status code `204`
+
 ## PUT /groups/{groupId}
 
 ```shell
