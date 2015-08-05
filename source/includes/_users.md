@@ -35,8 +35,10 @@ This endpoint retrieves a specific user.
 Status code `200`
 
 <aside class="notice">
+
 * timeZone will be one of the supported time zones specified here
 * status will be one of ACTIVE, INVITED or INACTIVE
+
 </aside>
 
 ## Get a list of users
@@ -90,12 +92,11 @@ term | A search term to narrow the list of users returned | No | String | `null`
 sort | Field to sort the results on | No | firstName, lastName or emailAddress | emailAddress
 sortDirection | Sort ascending or descending | No | ASC or DESC | ASC
 
-See the [paging metadata specification](#paging-format) for more information on the `_paging` property
-
 ### Response
 
 Status code `200`
 
+See the [paging metadata specification](#paging-format) for more information on the `_paging` property
 
 ## Create a new user
 
@@ -231,3 +232,83 @@ This endpoint deletes an existing user
 ### Response
 
 Status code `204`, empty body
+
+## Get a list of streams a user follows
+
+```shell
+curl -u username:password \
+     -X GET \
+     -d rows=20 \
+     -d page=0 \
+     -d term=test \
+     https://api.attensa.net/users/{userId}/streams
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "_paging": {
+    "elementCount": 1,
+    "page": 0,
+    "pageCount": 1,
+    "requestedPageSize": 20,
+    "totalElementCount": 1
+  },
+  "streams": [
+    {
+      "id": "546e17fcd4c67da2547f5b61",
+      "title": "Test Stream 01",
+      "ownerId": "55414a36e4b0436b6280e668",
+      "description" : "Description 01",
+      "type": "RSS",
+      "source": {
+          "uri": "http://slashdot.org/rss"
+      },
+      "emailPostingEnabled": false,
+      "openForReading": true,
+      "openForPosting": false,
+      "streamEmailAddress": "test.stream.01@email.attensa.net",
+      "rssEnabled": false,
+      "catgoryIds" : ["55414a36e4b0436b6280e668", "823hg4asf34b0436b6280e668"],
+      "itemsCount": 0,
+      "followersCount": 0,
+      "userIsFollowing": true,
+      "userIsFollowingViaGroup": false,
+      "userIsSubscribed": true,
+      "userIsSubscribedViaGroup": false,
+      "_links": {
+            "self": "https://api.attensa.net/streams/546e17fcd4c67da2547f5b61"
+        }
+    }
+  ]
+}
+```
+
+This endpoint retrives a list of streams that a user is following
+
+### Request
+
+`GET https://api.attensa.com/users/{userId}/streams`
+
+### Request query parameters
+
+Parameter | Description | Required | Format | Default
+--------- | ----------- | -------- | ------ | -------
+page | The page number to retrieve | No | Integer | 0
+rows | Number of users in each page | No | Integer | 20
+term | A search term to narrow the list of streams returned | No | String | `null`
+
+
+### Response
+
+Status code `200`
+
+See the [paging metadata specification](#paging-format) for more information on the `_paging` property
+
+Four properties are added to the normal stream objects returned in the `streams` array that specify the user's relationship with the stream:
+
+* userIsFollowing
+* userIsFollowingViaGroup
+* userIsSubscribed
+* userIsSubscribedViaGroup
