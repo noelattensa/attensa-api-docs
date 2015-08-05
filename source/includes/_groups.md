@@ -85,6 +85,70 @@ This endpoint retrieves information about a specific group
 
 Status code `200`
 
+## GET /groups/{groupId}/users
+
+```shell
+curl -u username:password \
+     -X GET \
+     -d rows=20 \
+     -d page=0 \
+     -d sort=firstName
+     -d sortDirection=ASC
+     -d term=test \
+     https://api.attensa.net/groups/{groupId}/users
+```
+
+> Status code 200 with response as follows:
+
+```json
+{
+  "_paging": {
+    "totalElementCount": 1,
+    "pageCount": 1,
+    "requestedPageSize": 20,
+    "elementCount": 1,
+    "page": 0
+  },
+  "users": [
+    {
+      "id": "546e17fcd4c67da2547f5b61",
+      "firstName": "test",
+      "middleName": "j",
+      "lastName": "user",
+      "suffix": "sr",
+      "emailAddress": "foo@test.com",
+      "timeZone": "Europe/Paris",
+      "status": "ACTIVE",
+      "_links": {
+        "self": "http://api.attensa.net/users/546e17fcd4c67da2547f5b61"
+      }
+    }
+  ]
+}
+```
+
+This endpoint retrieves a paged list of users in a certain group.
+
+### Request
+
+`GET https://api.attensa.com/users`
+
+### Request query parameters
+
+Parameter | Description | Required | Format | Default
+--------- | ----------- | -------- | ------ | -------
+page | The page number to retrieve | No | Integer | 0
+rows | Number of users in each page | No | Integer | 20
+term | A search term to narrow the list of users returned | No | String | `null`
+sort | Field to sort the results on | No | `firstName`, `lastName`, `emailAddress`, `status` | emailAddress
+sortDirection | Sort ascending or descending | No | ASC or DESC | ASC
+
+### Response
+
+Status code `200`
+
+See the [paging metadata specification](#paging-format) for more information on the `_paging` property
+
 ## POST /groups
 
 ```shell
