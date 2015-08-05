@@ -22,7 +22,7 @@ Welcome to the Attensa API! To get started, please <a href='http://attensa.com/c
 
 The Attensa API helps you manage your users and streams outside of our web interface.  The API is split into 5 different sections:
 
-* **Briefings** - Get list of active briefings
+* **Briefings** - Get a list of active briefings
 * **Categories** - Get and set information about stream categories, including streams and briefings that a category contains.
 * **Groups** - Get and set up user groups, including the streams and briefings a group subscribes to.
 * **Streams** - Create streams, get information about them post new items into streams
