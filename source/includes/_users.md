@@ -405,3 +405,33 @@ Four properties are added to the normal stream objects returned in briefings arr
 * userIsFollowingViaGroup
 * userIsSubscribed
 * userIsSubscribedViaGroup
+
+## POST /users/{userId}/streams
+
+```shell
+curl -u username:password \
+     -H "Content-Type: application/json" \
+     -X POST \
+     -d '{
+       "streamId": "546e17fcd4c67da2547f5b61",
+       "subscribeToBriefing": true,
+     }' \
+     https://api.attensa.net/users/{userId}/streams
+```
+
+Have a user follow a stream and optionally subscribe to the streams briefing.
+
+### Request
+
+`POST https://api.attensa.com/users/{userId}/streams`
+
+### Request body parameters
+
+Parameter | Description | Required | Format | Default
+--------- | ----------- | -------- | ------ | -------
+streamId | The stream for the user to follow | Yes | String | n/a
+subscribeToBriefing | Subscribe the user to the briefing | No | Boolean | `false`
+
+### Response
+
+Status code `204` with empty body
