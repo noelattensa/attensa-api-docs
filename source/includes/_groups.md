@@ -491,3 +491,22 @@ Remove a user from a group
 ### Response
 
 Status code `204` with empty body
+
+## DELETE /groups/{groupId}/streams/{streamId}
+
+```shell
+curl -u username:password \
+     -X DELETE \
+     https://api.attensa.net/groups/{groupId}/streams/{streamId}
+```
+> 204 empty body returned on success
+
+Unfollow & unsubscribe a group from a stream
+
+### Request
+
+`DELETE https://api.attensa.net/groups/{groupId}/streams/{streamId}`
+
+### Response
+
+Status code `204` with empty body
