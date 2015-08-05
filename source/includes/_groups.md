@@ -149,6 +149,66 @@ Status code `200`
 
 See the [paging metadata specification](#paging-format) for more information on the `_paging` property
 
+## GET /groups/{groupId}/streams
+
+```shell
+curl -u username:password \
+     -X GET \
+     -d rows=20 \
+     -d page=0 \
+     -d term=test \
+     https://api.attensa.net/groups/{groupId}/streams
+```
+
+> Status code 200 with response as follows:
+
+```json
+{
+  "_paging": {
+    "totalElementCount": 1,
+    "pageCount": 1,
+    "requestedPageSize": 20,
+    "elementCount": 1,
+    "page": 0
+  },
+  "streams": [{
+    "title": "Test Stream 01",
+    "groupIsSubscribed": true,
+    "description": "Description 01",
+    "ownerId": "55414a36e4b0436b6280e668",
+    "type": "COLLECTION",
+    "emailPostingEnabled": true,
+    "openForReading": true,
+    "openForPosting": true,
+    "streamEmailAddress": "test.stream.01@email.attensa.net",
+    "rssEnabled": false,
+    "categoryIds" : ["55414a36e4b0436b6280e668", "823hg4asf34b0436b6280e668"]
+  }]
+}
+```
+
+This endpoint retrieves a paged list of streams that a group follows.
+
+### Request
+
+`GET https://api.attensa.com/streams`
+
+### Request query parameters
+
+Parameter | Description | Required | Format | Default
+--------- | ----------- | -------- | ------ | -------
+page | The page number to retrieve | No | Integer | 0
+rows | Number of streams in each page | No | Integer | 20
+term | A search term to narrow the list of streams returned | No | String | `null`
+
+### Response
+
+Status code `200`
+
+See the [paging metadata specification](#paging-format) for more information on the `_paging` property
+
+<aside class="notice">The stream objects in the stream array will include a groupIsSubscribed property that specifies whether the group is subscribed to the stream's briefing in addition to following it.</aside>
+
 ## POST /groups
 
 ```shell
