@@ -124,3 +124,24 @@ name | Name of the group | No | String | n/a
 ### Response
 
 Status code `200`
+
+## DELETE /groups/{groupId}
+
+```shell
+curl -u username:password \
+     -X DELETE \
+     https://api.attensa.net/groups/{groupId}
+```
+> 204 empty body returned on success
+
+Delete an existing group from the system.  All users will be un-followed and un-subscribed from streams they followed or subscribed to via this group.
+
+<aside class="warning">Use this endpoint with care!  There is no way to undo this action from the API</aside>
+
+### Request
+
+`DELETE https://api.attensa.net/groups/{groupId}`
+
+### Response
+
+Status code `204` with empty body
