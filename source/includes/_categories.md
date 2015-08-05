@@ -102,6 +102,77 @@ Status code `200`
 
 See the [paging metadata specification](#paging-format) for more information on the `_paging` property
 
+## GET /categories/uncategorized/streams
+
+```shell
+curl -u username:password \
+     -X GET \
+     -d page=0 \
+     -d published=true \
+     -d rows=20 \
+     -d term=javascript \
+     -d type=RSS \
+     https://api.attensa.net/categories/uncategorized/streams
+```
+
+> Status code 200 with response as follows:
+
+```json
+{
+  "_paging": {
+    "elementCount": 1,
+    "page": 0,
+    "pageCount": 1,
+    "requestedPageSize": 20,
+    "totalElementCount": 1
+  },
+  "streams": [
+    {
+      "categoryIds": [],
+      "description": "Daily Javascript news",
+      "emailPostingEnabled": false,
+      "id": "5519ae56e4b0c0419a88bae1",
+      "followersCount": 0,
+      "itemsCount": 111,
+      "openForPosting": false,
+      "openForReading": true,
+      "ownerId": "54da7849e4b02386a4658e5d",
+      "rssEnabled": true,
+      "source": {
+          "uri": "http://feeds.feedburner.com/dailyjs"
+      },
+      "title": "DailyJS",
+      "type": "RSS",
+      "_links": {
+          "self": "http://localhost:8000/streams/5519ae56e4b0c0419a88bae1"
+      }
+    }
+  ]
+}
+```
+
+Get a paged list of uncategorized streams.
+
+### Request
+
+`GET /categories/uncategorized/streams`
+
+### Request query parameters
+
+Parameter | Description | Required | Format | Default
+--------- | ----------- | -------- | ------ | -------
+page | The page number to retrieve | No | Integer | 0
+published | Filter stream list to published or unpublished streams. Omit for all streams. | No | Boolean | `null`
+rows | Number of streams in each page | No | Integer | 20
+term | A search term to narrow the list of streams returned | No | String | `null`
+type | Filter results to a specific stream type | No | `COLLECTION`, `RSS`, `TWITTER`, `XML` | `null`
+
+### Response
+
+Status code `200`
+
+See the [paging metadata specification](#paging-format) for more information on the `_paging` property
+
 ## PUT /categories
 
 ```shell
