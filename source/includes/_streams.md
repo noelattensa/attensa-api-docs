@@ -208,6 +208,8 @@ curl -u username:password \
 }
 ```
 
+Create a new stream
+
 ### Request
 
 `POST https://api.attensa.net/streams`
@@ -219,7 +221,7 @@ Parameter | Description | Required | Format | Default
 title | Stream Title | Yes | String | n/a
 description | Stream description | No | String | `null`
 ownerId | User id of stream owner | Yes | String of valid user id | n/a
-type | Stream type | Yes | COLLECTION, RSS | n/a
+type | Stream type | Yes | `COLLECTION`, `RSS` | n/a
 source:uri | Uri of rss feed. Only supply for type RSS streams | For type RSS | String | `null`
 source:username | Basic auth username for secured rss feed. Only supply for type RSS streams. | For secured RSS streams | String | `null`
 source:password | Basic auth password for secured rss feed. Only supply for type RSS streams. | For secured RSS streams | String | `null`
