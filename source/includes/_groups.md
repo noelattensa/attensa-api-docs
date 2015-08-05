@@ -358,3 +358,22 @@ Delete an existing group from the system.  All users will be un-followed and un-
 ### Response
 
 Status code `204` with empty body
+
+## DELETE /groups/{groupId}/users/{userId}
+
+```shell
+curl -u username:password \
+     -X DELETE \
+     https://api.attensa.net/groups/{groupId}/users/{userId}
+```
+> 204 empty body returned on success
+
+Remove a user from a group
+
+### Request
+
+`DELETE https://api.attensa.net/groups/{groupId}/users/{userId}`
+
+### Response
+
+Status code `204` with empty body
