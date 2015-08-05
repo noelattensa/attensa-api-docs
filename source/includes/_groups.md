@@ -256,6 +256,41 @@ name | Name of the group | Yes | String | n/a
 
 Status code `201`
 
+## POST /groups/{groupId}/users
+
+```shell
+curl -u username:password \
+     -H "Content-Type: application/json" \
+     -X POST \
+     -d '{
+       "id": "56161che546097aa51621b47"
+     }' \
+     https://api.attensa.net/groups/users
+```
+> Status code 201 with response as follows:
+
+```json
+{
+  "id": "56161che546097aa51621b47"
+}
+```
+
+Add a user to a group
+
+### Request
+
+`POST https://api.attensa.net/groups/users`
+
+### JSON request body
+
+Parameter | Description | Required | Format | Default
+--------- | ----------- | -------- | ------ | -------
+id | Id of the user that should be added to the group | Yes | String | n/a
+
+### Response
+
+Status code `201`
+
 ## PUT /groups/{groupId}
 
 ```shell
