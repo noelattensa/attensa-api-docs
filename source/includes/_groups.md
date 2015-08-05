@@ -47,7 +47,7 @@ Get a paged list of groups.
 Parameter | Description | Required | Format | Default
 --------- | ----------- | -------- | ------ | -------
 page | The page number to retrieve | No | Integer | 0
-rows | Number of users in each page | No | Integer | 20
+rows | Number of groups in each page | No | Integer | 20
 term | A search term to narrow the list of groups returned | No | String | `null`
 
 ### Response
