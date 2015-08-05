@@ -1,5 +1,59 @@
 # Groups
 
+## GET /groups
+
+```shell
+curl -u username:password \
+     -X GET \
+     -d rows=20 \
+     -d page=0 \
+     -d term=test \
+     https://api.attensa.net/groups
+```
+> Status code 200 with response as follows:
+
+```json
+{
+  "_paging": {
+    "totalElementCount": 1,
+    "pageCount": 1,
+    "requestedPageSize": 20,
+    "elementCount": 1,
+    "page": 0
+  },
+  "groups": [
+    {
+      "creatorId": "56161che546097aa51621b47",
+      "description": "foo",
+      "name": "test",
+      "streamCount": 5,
+      "userCount": 192,
+      "_links": {
+          "self": "http://api.attensa.net/groups/55161cf7e4b097aa51621b47"
+      }
+    }
+  ]
+}
+```
+
+Get a paged list of groups.
+
+### Request
+
+`GET https://api.attensa.net/groups`
+
+### Request query parameters
+
+Parameter | Description | Required | Format | Default
+--------- | ----------- | -------- | ------ | -------
+page | The page number to retrieve | No | Integer | 0
+rows | Number of users in each page | No | Integer | 20
+term | A search term to narrow the list of groups returned | No | String | `null`
+
+### Response
+
+Status code `200`
+
 ## GET /groups/{groupId}
 
 ```shell
