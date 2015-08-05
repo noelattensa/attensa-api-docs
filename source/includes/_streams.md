@@ -175,7 +175,7 @@ Update an existing stream.  Updated are applied in a incremental PATCH-like mann
 
 ### Request
 
-`PUT https://api.attensa.net/streams`
+`PUT https://api.attensa.net/streams/{streamId}`
 
 ### JSON body request properties
 
@@ -201,3 +201,24 @@ categoryIds | Categories to put the stream in | No | [String] | n/a
 ### Response
 
 Status code `200`
+
+## DELETE /streams/{streamId}
+
+```shell
+curl -u username:password \
+     -X DELETE \
+     https://api.attensa.net/streams/{streamId}
+```
+> 204 emtpy body returned on success
+
+Delete an existing stream from the system.  All users will be un-followed and un-subscribed from the stream when it is deleted.
+
+<aside class="warning">Use this endpoint with care!  There is no way to undo this action from the API</aside>
+
+### Request
+
+`DELETE https://api.attensa.net/streams/{streamId}`
+
+### Response
+
+Status code `204` with empty body
