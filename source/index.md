@@ -9,6 +9,7 @@ search: true
 includes:
   - authentication
   - categories
+  - groups
   - streams
   - users
   - paging
