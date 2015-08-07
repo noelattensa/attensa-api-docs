@@ -29,7 +29,7 @@ curl -u username:password \
       "streamCount": 5,
       "userCount": 192,
       "_links": {
-          "self": "http://api.attensa.net/groups/55161cf7e4b097aa51621b47"
+          "self": "https://api.attensa.net/groups/55161cf7e4b097aa51621b47"
       }
     }
   ]
@@ -120,7 +120,7 @@ curl -u username:password \
       "timeZone": "Europe/Paris",
       "status": "ACTIVE",
       "_links": {
-        "self": "http://api.attensa.net/users/546e17fcd4c67da2547f5b61"
+        "self": "https://api.attensa.net/users/546e17fcd4c67da2547f5b61"
       }
     }
   ]
@@ -264,7 +264,8 @@ curl -u username:password \
         "itemsCount": 0,
         "followersCount": 0,
         "_links": {
-            "self": "https://api.attensa.net/streams/546e17fcd4c67da2547f5b61"
+          "self": "https://api.attensa.net/streams/546e17fcd4c67da2547f5b61",
+          "owner": "https://api.attensa.net/users/55414a36e4b0436b6280e668"
         }
       }
     }

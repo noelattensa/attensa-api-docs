@@ -28,7 +28,7 @@ curl -u adam:password https://localhost:8000/users
       "timeZone": "Europe/Paris",
       "status": "ACTIVE",
       "_links": {
-        "self": "http://api.attensa.net/users/546e17fcd4c67da2547f5b61"
+        "self": "https://api.attensa.net/users/546e17fcd4c67da2547f5b61"
       }
     }
   ]
@@ -76,7 +76,7 @@ curl -u adam:password https://api.attensa.net/users/{userId}
   "timeZone": "Europe/Paris",
   "status": "ACTIVE",
   "_links": {
-    "self": "http://api.attensa.net/users/546e17fcd4c67da2547f5b61"
+    "self": "https://api.attensa.net/users/546e17fcd4c67da2547f5b61"
   }
 }
 ```
@@ -85,7 +85,7 @@ This endpoint retrieves a specific user.
 
 ### Request
 
-`GET http://api.attensa.com/users/{userId}`
+`GET https://api.attensa.com/users/{userId}`
 
 ### Response
 
@@ -136,8 +136,9 @@ curl -u username:password \
       "userIsSubscribed": true,
       "userIsSubscribedViaGroup": false,
       "_links": {
-            "self": "https://api.attensa.net/streams/546e17fcd4c67da2547f5b61"
-        }
+          "self": "https://api.attensa.net/streams/546e17fcd4c67da2547f5b61",
+          "owner": "https://api.attensa.net/users/55414a36e4b0436b6280e668"
+      }
     }
   ]
 }
@@ -229,7 +230,8 @@ curl -u username:password \
         "userIsSubscribed": true,
         "userIsSubscribedViaGroup": false,
         "_links": {
-            "self": "https://api.attensa.net/streams/546e17fcd4c67da2547f5b61"
+          "self": "https://api.attensa.net/streams/546e17fcd4c67da2547f5b61",
+          "owner": "https://api.attensa.net/users/55414a36e4b0436b6280e668"
         }
       }
     }
@@ -295,7 +297,7 @@ curl -u username:password \
   "timeZone": "Europe/Paris",
   "status": "ACTIVE",
   "_links": {
-    "self": "http://api.attensa.net/users/546e17fcd4c67da2547f5b61"
+    "self": "https://api.attensa.net/users/546e17fcd4c67da2547f5b61"
   }
 }
 ```
@@ -383,7 +385,7 @@ curl -u username:password \
   "timeZone": "Europe/Paris",
   "status": "ACTIVE",
   "_links": {
-    "self": "http://api.attensa.net/users/546e17fcd4c67da2547f5b61"
+    "self": "https://api.attensa.net/users/546e17fcd4c67da2547f5b61"
   }
 }
 ```

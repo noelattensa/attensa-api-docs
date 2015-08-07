@@ -73,7 +73,8 @@ curl -u username:password \
       "title": "DailyJS",
       "type": "RSS",
       "_links": {
-          "self": "http://localhost:8000/streams/5519ae56e4b0c0419a88bae1"
+        "self": "https://api.attensa.net/streams/5519ae56e4b0c0419a88bae1",
+        "owner": "https://api.attensa.net/users/54da7849e4b02386a4658e5d"
       }
     }
   ]
@@ -144,7 +145,8 @@ curl -u username:password \
       "title": "DailyJS",
       "type": "RSS",
       "_links": {
-          "self": "http://localhost:8000/streams/5519ae56e4b0c0419a88bae1"
+        "self": "https://api.attensa.net/streams/5519ae56e4b0c0419a88bae1",
+        "owner": "https://api.attensa.net/users/54da7849e4b02386a4658e5d"
       }
     }
   ]
@@ -223,7 +225,8 @@ curl -u username:password \
         "title": "DailyJS",
         "type": "RSS",
         "_links": {
-            "self": "http://localhost:8000/streams/5519ae56e4b0c0419a88bae1"
+          "self": "https://api.attensa.net/streams/5519ae56e4b0c0419a88bae1",
+          "owner": "https://api.attensa.net/users/54da7849e4b02386a4658e5d"
         }
       }
     }
@@ -300,7 +303,8 @@ curl -u username:password \
         "title": "DailyJS",
         "type": "RSS",
         "_links": {
-            "self": "http://localhost:8000/streams/5519ae56e4b0c0419a88bae1"
+          "self": "https://api.attensa.net/streams/5519ae56e4b0c0419a88bae1",
+          "owner": "https://api.attensa.net/users/54da7849e4b02386a4658e5d"
         }
       }
     }
