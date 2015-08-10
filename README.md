@@ -1,5 +1,3 @@
-# Warning!  These docs are under heavy development!  Don't rely on this yet!
-
 Attensa API documentation
 ========
 
