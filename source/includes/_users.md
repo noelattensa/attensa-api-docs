@@ -317,7 +317,7 @@ middleName | Middle name | No | String | `null`
 lastName | Last name | Yes | String | n/a
 suffix | Suffix (e.g. JR, SR) | No | String | `null`
 emailAddress | Email Address (unique) | Yes | String in valid email format | n/a
-timeZone | Supported time zone | Supported time zone string | `null`
+timeZone | Supported time zone | [Supported time zone string](#time-zones) | `null`
 status | User's status | Yes | ACTIVE, INVITED or INACTIVE | ACTIVE
 
 ### Response

@@ -25,7 +25,7 @@ curl -u username:password \
     {
       "description": "javascript news",
       "templateId": "54eba226e4b050dd8b9c1099",
-      "title": "DailyJS",
+      "subject": "DailyJS",
       "schedule": {
         "frequency": "DAILY",
         "interval": 2,
