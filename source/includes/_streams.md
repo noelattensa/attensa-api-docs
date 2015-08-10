@@ -369,7 +369,7 @@ schedule:sendMinute | Minute of hour to send briefing | Yes | Integer `0-59` | n
 schedule:frequency | Frequency to send briefing | Yes | `DAILY`, `WEEKLY`, `MONTHLY` | n/a
 schedule:interval | Interval of frequency to send.  e.g. send every `<interval>` days  | No | Integer `1-31` | 1
 schedule:sendDays | Array of days of the week to send briefing on | For WEEKLY frequency | [`SU`,`MO`,`TU`,`WE`,`TH`,`FR`,`SA`] | n/a
-schedule:timeZone | Timezone of requested send time | Yes | Supported time zone string | `null`
+schedule:timeZone | Timezone of requested send time | Yes | [Supported time zone string](#time-zones) | `null`
 
 
 ### Response
