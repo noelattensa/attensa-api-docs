@@ -55,6 +55,10 @@ curl -u username:password \
     "requestedPageSize": 20,
     "totalElementCount": 1
   },
+  "_links": {
+    "first": "https://api.attensa.net/categories/{categoryId}/streams?rows=20&term=javascript&type=RSS&published=true&page=0",
+    "last": "https://api.attensa.net/categories/{categoryId}/streams?rows=20&term=javascript&type=RSS&published=true&page=0"
+  },
   "streams": [
     {
       "categoryIds": ["54eba224e4b050dd8b9c1096"],
@@ -127,6 +131,10 @@ curl -u username:password \
     "requestedPageSize": 20,
     "totalElementCount": 1
   },
+  "_links": {
+    "first": "https://api.attensa.net/categories/uncategorized/streams?rows=20&term=javascript&type=RSS&published=true&page=0",
+    "last": "https://api.attensa.net/categories/uncategorized/streams?rows=20&term=javascript&type=RSS&published=true&page=0"
+  },
   "streams": [
     {
       "categoryIds": [],
@@ -195,6 +203,10 @@ curl -u username:password \
     "pageCount": 1,
     "requestedPageSize": 20,
     "totalElementCount": 1
+  },
+  "_links": {
+    "first": "https://api.attensa.net/categories/{categoryId}/briefings?rows=20&page=0",
+    "last": "https://api.attensa.net/categories/{categoryId}/briefings?rows=20&page=0"
   },
   "briefings": [
     {
@@ -273,6 +285,10 @@ curl -u username:password \
     "pageCount": 1,
     "requestedPageSize": 20,
     "totalElementCount": 1
+  },
+  "_links": {
+    "first": "https://api.attensa.net/categories/uncategorized/briefings?rows=20&page=0",
+    "last": "https://api.attensa.net/categories/uncategorized/briefings?rows=20&page=0"
   },
   "briefings": [
     {

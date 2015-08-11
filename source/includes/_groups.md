@@ -21,6 +21,10 @@ curl -u username:password \
     "elementCount": 1,
     "page": 0
   },
+  "_links": {
+    "first": "https://api.attensa.net/groups?rows=20&page=0&term=test",
+    "last": "https://api.attensa.net/groups?rows=20&page=0&term=test"
+  },
   "groups": [
     {
       "creatorId": "56161che546097aa51621b47",
@@ -109,6 +113,10 @@ curl -u username:password \
     "elementCount": 1,
     "page": 0
   },
+  "_links": {
+    "first": "https://api.attensa.net/groups/{groupId}/users?rows=20&page=0&term=test&sort=firstName&sortDirection=ASC",
+    "last": "https://api.attensa.net/groups/{groupId}/users?rows=20&page=0&term=test&sort=firstName&sortDirection=ASC"
+  },
   "users": [
     {
       "id": "546e17fcd4c67da2547f5b61",
@@ -171,6 +179,10 @@ curl -u username:password \
     "elementCount": 1,
     "page": 0
   },
+  "_links": {
+    "first": "https://api.attensa.net/groups/{groupId}/streams?rows=20&page=0&term=test",
+    "last": "https://api.attensa.net/groups/{groupId}/streams?rows=20&page=0&term=test"
+  },
   "streams": [{
     "title": "Test Stream 01",
     "groupIsSubscribed": true,
@@ -229,6 +241,10 @@ curl -u username:password \
     "pageCount": 1,
     "requestedPageSize": 20,
     "totalElementCount": 1
+  },
+  "_links": {
+    "first": "https://api.attensa.net/groups/{groupId}/briefings?rows=20&page=0",
+    "last": "https://api.attensa.net/groups/{groupId}/briefings?rows=20&page=0"
   },
   "briefings": [
     {

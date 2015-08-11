@@ -24,6 +24,10 @@ curl -u username:password \
     "elementCount": 1,
     "page": 0
   },
+  "_links": {
+    "first": "https://api.attensa.net/streams?rows=20&page=0&term=test&type=COLLECTION&published=true",
+    "last": "https://api.attensa.net/streams?rows=20&page=0&term=test&type=COLLECTION&published=true"
+  },
   "streams": [{
     "id": "546e17fcd4c67da2547f5b61",
     "title": "Test Stream 01",

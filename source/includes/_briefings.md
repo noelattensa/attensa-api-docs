@@ -21,6 +21,10 @@ curl -u username:password \
     "requestedPageSize": 20,
     "totalElementCount": 1
   },
+  "_links": {
+    "first": "https://api.attensa.net/briefings?rows=20&page=0",
+    "last": "https://api.attensa.net/briefings?rows=20&page=0"
+  },
   "briefings": [
     {
       "description": "javascript news",
