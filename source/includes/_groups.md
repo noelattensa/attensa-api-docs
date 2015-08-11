@@ -180,6 +180,7 @@ curl -u username:password \
     "emailPostingEnabled": true,
     "openForReading": true,
     "openForPosting": true,
+    "published": true,
     "streamEmailAddress": "test.stream.01@email.attensa.net",
     "rssEnabled": false,
     "categoryIds" : ["55414a36e4b0436b6280e668", "823hg4asf34b0436b6280e668"]
@@ -258,6 +259,7 @@ curl -u username:password \
         "emailPostingEnabled": false,
         "openForReading": true,
         "openForPosting": false,
+        "published": true,
         "streamEmailAddress": "test.stream.01@email.attensa.net",
         "rssEnabled": false,
         "catgoryIds" : ["55414a36e4b0436b6280e668", "823hg4asf34b0436b6280e668"],

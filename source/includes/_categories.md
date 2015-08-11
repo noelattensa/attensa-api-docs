@@ -66,6 +66,7 @@ curl -u username:password \
       "openForPosting": false,
       "openForReading": true,
       "ownerId": "54da7849e4b02386a4658e5d",
+      "published": true,
       "rssEnabled": true,
       "source": {
           "uri": "http://feeds.feedburner.com/dailyjs"
@@ -138,6 +139,7 @@ curl -u username:password \
       "openForPosting": false,
       "openForReading": true,
       "ownerId": "54da7849e4b02386a4658e5d",
+      "published": true,
       "rssEnabled": true,
       "source": {
           "uri": "http://feeds.feedburner.com/dailyjs"
@@ -218,6 +220,7 @@ curl -u username:password \
         "openForPosting": false,
         "openForReading": true,
         "ownerId": "54da7849e4b02386a4658e5d",
+        "published": true,
         "rssEnabled": true,
         "source": {
             "uri": "http://feeds.feedburner.com/dailyjs"
@@ -296,6 +299,7 @@ curl -u username:password \
         "openForPosting": false,
         "openForReading": true,
         "ownerId": "54da7849e4b02386a4658e5d",
+        "published": true,
         "rssEnabled": true,
         "source": {
             "uri": "http://feeds.feedburner.com/dailyjs"
