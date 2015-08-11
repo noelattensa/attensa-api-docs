@@ -38,6 +38,7 @@ curl -u username:password \
     "emailPostingEnabled": true,
     "openForReading": true,
     "openForPosting": true,
+    "published": true,
     "streamEmailAddress": "test.stream.01@email.attensa.net",
     "rssEnabled": false,
     "categoryIds" : ["55414a36e4b0436b6280e668", "823hg4asf34b0436b6280e668"],
@@ -93,6 +94,7 @@ curl -u username:password https://api.attensa.net/streams/{streamId}
   "emailPostingEnabled": false,
   "openForReading": true,
   "openForPosting": true,
+  "published": true,
   "streamEmailAddress": "test.stream.01@email.attensa.net",
   "rssEnabled": false,
   "catgoryIds" : ["55414a36e4b0436b6280e668", "823hg4asf34b0436b6280e668"],
@@ -144,6 +146,7 @@ curl -u username:password https://api.attensa.net/streams/{streamId}/briefing
     "openForPosting": false,
     "openForReading": true,
     "ownerId": "54da7849e4b02386a4658e5d",
+    "published": true,
     "rssEnabled": true,
     "source": {
         "uri": "http://feeds.feedburner.com/dailyjs"
@@ -209,6 +212,7 @@ curl -u username:password \
   "streamEmailAddress": "test.stream.01@email.attensa.net",
   "openForReading": true,
   "openForPosting": true,
+  "published": true,
   "rssEnabled": false,
   "catgoryIds" : ["55414a36e4b0436b6280e668"],
   "itemsCount": 0,
@@ -241,8 +245,9 @@ emailPostingEnabled | Allow posting to COLLECTION stream via email. | No | Boole
 streamEmailAddress | Email address to for stream if emailPosting is enabled. Only set for collection streams | No | Valid email string | `null`
 openForReading | Allow all users to read this stream | No | boolean | false
 openForPosting | Allow all users to post content to a COLLECTION stream | No | boolean | false
+published | Publish the stream for users in your account to discover | No | boolean | false
 rssEnabled | Allow public access to an RSS feed of this stream | No | boolean | false
-categoryIds | Categories to put the stream in | Yes (empy array for no categories) | [String] | []
+categoryIds | Categories to put the stream in | Yes (empty array for no categories) | [String] | []
 
 
 ### Response
@@ -339,6 +344,7 @@ curl -u username:password \
     "openForPosting": false,
     "openForReading": true,
     "ownerId": "54da7849e4b02386a4658e5d",
+    "published": true,
     "rssEnabled": true,
     "source": {
         "uri": "http://feeds.feedburner.com/dailyjs"
@@ -420,6 +426,7 @@ curl -u username:password \
   "emailPostingEnabled": false,
   "openForReading": true,
   "openForPosting": true,
+  "published": true,
   "rssEnabled": false,
   "catgoryIds" : ["55414a36e4b0436b6280e668"],
   "itemsCount": 0,
@@ -451,6 +458,7 @@ emailPostingEnabled | Allow posting to COLLECTION stream via email. | No | Boole
 streamEmailAddress | Email address to for stream if emailPosting is enabled. Only set for collection streams | No | Valid email string | n/a
 openForReading | Allow all users to read this stream | No | Boolean | n/a
 openForPosting | Allow all users to post content to a COLLECTION stream | No | Boolean | n/a
+published | Publish the stream for users in your account to discover | No | boolean | false
 rssEnabled | Allow public access to an RSS feed of this stream | No | Boolean | n/a
 categoryIds | Categories to put the stream in | No | [String] | n/a
 
