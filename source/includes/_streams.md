@@ -42,6 +42,13 @@ curl -u username:password \
     "streamEmailAddress": "test.stream.01@email.attensa.net",
     "rssEnabled": false,
     "categoryIds" : ["55414a36e4b0436b6280e668", "823hg4asf34b0436b6280e668"],
+    "substreams": [
+      {
+          "id": "559c1972e4b008b9a5329478",
+          "title": "Hi, I am a substream!",
+          "type": "RSS"
+      }
+    ],
     "_links": {
       "self": "https://api.attensa.net/streams/546e17fcd4c67da2547f5b61",
       "owner": "https://api.attensa.net/users/55414a36e4b0436b6280e668"
@@ -100,6 +107,13 @@ curl -u username:password https://api.attensa.net/streams/{streamId}
   "catgoryIds" : ["55414a36e4b0436b6280e668", "823hg4asf34b0436b6280e668"],
   "itemsCount": 0,
   "followersCount": 0,
+  "substreams": [
+    {
+        "id": "559c1972e4b008b9a5329478",
+        "title": "Hi, I am a substream!",
+        "type": "RSS"
+    }
+  ],
   "_links": {
     "self": "https://api.attensa.net/streams/546e17fcd4c67da2547f5b61",
     "owner": "https://api.attensa.net/users/55414a36e4b0436b6280e668"
