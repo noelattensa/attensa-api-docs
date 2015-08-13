@@ -194,6 +194,13 @@ curl -u username:password \
     "openForPosting": true,
     "published": true,
     "streamEmailAddress": "test.stream.01@email.attensa.net",
+    "substreams":[
+      {
+        "id": "559c1972e4b008b9a5329478",
+        "title": "Hi, I am a substream!",
+        "type": "RSS"
+      }
+    ],
     "rssEnabled": false,
     "categoryIds" : ["55414a36e4b0436b6280e668", "823hg4asf34b0436b6280e668"]
   }]
