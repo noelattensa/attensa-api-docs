@@ -269,6 +269,35 @@ categoryIds | Categories to put the stream in | Yes (empty array for no categori
 
 Status code `201`
 
+## POST /streams/{streamId}/streams
+
+```shell
+curl -u username:password \
+     -H "Content-Type: application/json" \
+     -X POST \
+     -d '{
+       "streamId": "5519ae56e4b0c0419a88bae1"
+     }' \
+     https://api.attensa.net/streams/{streamId}/streams
+```
+> 303 redirect returned pointing to parent stream resource
+
+Add a substream to a COLLECTION stream.
+
+### Request
+
+`POST https://api.attensa.net/streams/{streamId}/streams`
+
+### JSON request body parameters
+
+Parameter | Description | Required | Format | Default
+--------- | ----------- | -------- | ------ | -------
+streamId | The streamId of the child stream to be added | Yes | String | n/a
+
+### Response
+
+Status code `303` with `Location` header set to the url of the parent COLLECTION stream
+
 ## POST /streams/{streamId}/items
 
 ```shell
