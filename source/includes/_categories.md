@@ -16,12 +16,18 @@ curl -u adam:password https://localhost:8000/categories
     },
     {
         "id": "9090ad95d4c6285588f4b23c",
-        "title": "Wiz"
+        "title": "Wiz",
+        "subcategories": [
+          {
+            "id": "9490ad9789c6233588f4b23c",
+            "title": "Hot Sauce"
+          }
+        ]
     }
 ]
 ```
 
-This endpoint retrieves a list of categories available to categorize streams into
+This endpoint retrieves a list of categories available to put streams into.
 
 ### Request
 
@@ -361,9 +367,14 @@ curl -u username:password \
        {
          "id": "5547ad95d4c6285588f4b23c",
          "title": "Cheese",
+         "subcategories": [
+           {
+             "title": "Gruyere"
+           }
+         ]
        },
        {
-         "title": "Wiz",
+         "title": "Wiz"
        }
      ]' \
      https://api.attensa.net/streams/{streamId}/items
@@ -375,7 +386,13 @@ curl -u username:password \
 [
     {
         "id": "5547ad95d4c6285588f4b23c",
-        "title": "Cheese"
+        "title": "Cheese",
+        "subcategories": [
+          {
+            "id": "9190ad95d4732a85588f4b23c",
+            "title": "Gruyere"
+          }
+        ]
     },
     {
         "id": "9090ad95d4c6285588f4b23c",
@@ -397,6 +414,10 @@ Parameter | Description | Required | Format | Default
 --------- | ----------- | -------- | ------ | -------
 id | Id of existing category to update title | No | String | `null`
 title | Title of the category. | Yes | String | n/a
+subcategories | Array of subcategories | No |  Array of objects with title and optional id | `null`
 
-<aside class="notice">Any category without an id is considered to be new, and will be assigned an id in the response. If an existing category (with id) is included with a different title, the category's title will be updated.</aside>
-<aside class="warning">Be careful! If an existing category is not included, it is removed and any associated streams will be disassociate from the removed category.</aside>
+<aside class="notice">Any category without an id is considered to be new, and will be assigned an id in the response. If an existing category (with id) is included with a different title, the category's title will be updated.
+
+Categories can be moved from the top level down to sub-categories and vice versa.  Just make sure to preserve the id.
+</aside>
+<aside class="warning">Be careful! If an existing category is not included, it is removed and any associated streams will be disassociate from the removed category.  Categories are not preserved by matching title, only by id.</aside>
