@@ -201,6 +201,7 @@ curl -u username:password \
         "type": "RSS"
       }
     ],
+    "tagIds": ["54da78488ab02386a4658eee"],
     "rssEnabled": false,
     "categoryIds" : ["55414a36e4b0436b6280e668", "823hg4asf34b0436b6280e668"]
   }]
@@ -270,24 +271,25 @@ curl -u username:password \
       },
       "templateId": "54b58250e4b0ec83add2661e",
       "stream": {
-        "id": "546e17fcd4c67da2547f5b61",
-        "title": "Test Stream 01",
-        "groupIsSubscribed": true,
-        "ownerId": "55414a36e4b0436b6280e668",
+        "catgoryIds" : ["55414a36e4b0436b6280e668", "823hg4asf34b0436b6280e668"],
         "description" : "Description 01",
-        "type": "RSS",
+        "emailPostingEnabled": false,
+        "followersCount": 0,
+        "groupIsSubscribed": true,
+        "id": "546e17fcd4c67da2547f5b61",
+        "itemsCount": 0,
+        "openForPosting": false,
+        "openForReading": true,
+        "ownerId": "55414a36e4b0436b6280e668",
+        "published": true,
+        "rssEnabled": false,
         "source": {
             "uri": "http://slashdot.org/rss"
         },
-        "emailPostingEnabled": false,
-        "openForReading": true,
-        "openForPosting": false,
-        "published": true,
         "streamEmailAddress": "test.stream.01@email.attensa.net",
-        "rssEnabled": false,
-        "catgoryIds" : ["55414a36e4b0436b6280e668", "823hg4asf34b0436b6280e668"],
-        "itemsCount": 0,
-        "followersCount": 0,
+        "tagIds": ["54da78488ab02386a4658eee"],
+        "title": "Test Stream 01",
+        "type": "RSS",
         "_links": {
           "self": "https://api.attensa.net/streams/546e17fcd4c67da2547f5b61",
           "owner": "https://api.attensa.net/users/55414a36e4b0436b6280e668"

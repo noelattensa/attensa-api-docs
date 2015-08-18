@@ -42,6 +42,7 @@ curl -u username:password \
     "streamEmailAddress": "test.stream.01@email.attensa.net",
     "rssEnabled": false,
     "categoryIds" : ["55414a36e4b0436b6280e668", "823hg4asf34b0436b6280e668"],
+    "tagIds": ["54da78488ab02386a4658eee"],
     "substreams": [
       {
           "id": "559c1972e4b008b9a5329478",
@@ -107,6 +108,7 @@ curl -u username:password https://api.attensa.net/streams/{streamId}
   "catgoryIds" : ["55414a36e4b0436b6280e668", "823hg4asf34b0436b6280e668"],
   "itemsCount": 0,
   "followersCount": 0,
+  "tagIds": ["54da78488ab02386a4658eee"],
   "substreams": [
     {
         "id": "559c1972e4b008b9a5329478",
@@ -165,6 +167,7 @@ curl -u username:password https://api.attensa.net/streams/{streamId}/briefing
     "source": {
         "uri": "http://feeds.feedburner.com/dailyjs"
     },
+    "tagIds": ["54da78488ab02386a4658eee"],
     "title": "DailyJS",
     "type": "RSS",
     "_links": {
@@ -205,6 +208,7 @@ curl -u username:password \
        "openForReading": true,
        "openForPosting": true,
        "rssEnabled": false,
+       "tagIds": ["54da78488ab02386a4658eee"],
        "categoryIds" : ["55414a36e4b0436b6280e668"]
      }' \
      https://api.attensa.net/streams
@@ -229,6 +233,7 @@ curl -u username:password \
   "published": true,
   "rssEnabled": false,
   "catgoryIds" : ["55414a36e4b0436b6280e668"],
+  "tagIds": ["54da78488ab02386a4658eee"],
   "itemsCount": 0,
   "followersCount": 0,
   "_links": {
@@ -262,6 +267,7 @@ openForReading | Allow all users to read this stream | No | boolean | false
 openForPosting | Allow all users to post content to a COLLECTION stream | No | boolean | false
 published | Publish the stream for users in your account to discover | No | boolean | false
 rssEnabled | Allow public access to an RSS feed of this stream | No | boolean | false
+tagIds | Stream tag IDs to tag the stream | No | [String] | []
 categoryIds | Categories to put the stream in | Yes (empty array for no categories) | [String] | []
 
 
@@ -393,6 +399,7 @@ curl -u username:password \
     "source": {
         "uri": "http://feeds.feedburner.com/dailyjs"
     },
+    "tagIds": ["54da78488ab02386a4658eee"],
     "title": "DailyJS",
     "type": "RSS",
     "_links": {
@@ -450,6 +457,7 @@ curl -u username:password \
        "openForReading": true,
        "openForPosting": true,
        "rssEnabled": false,
+       "tagIds": ["54da78488ab02386a4658eee"],
        "categoryIds" : ["55414a36e4b0436b6280e668"]
      }' \
      https://api.attensa.net/streams/{streamId}
@@ -467,6 +475,7 @@ curl -u username:password \
       "uri": "http://slashdot.org/rss",
       "username": "myUserNameForSecuredRSSFeed"
   },
+  "tagIds": ["54da78488ab02386a4658eee"],
   "emailPostingEnabled": false,
   "openForReading": true,
   "openForPosting": true,
@@ -505,10 +514,11 @@ openForReading | Allow all users to read this stream | No | Boolean | n/a
 openForPosting | Allow all users to post content to a COLLECTION stream | No | Boolean | n/a
 published | Publish the stream for users in your account to discover | No | boolean | false
 rssEnabled | Allow public access to an RSS feed of this stream | No | Boolean | n/a
+tagIds | Stream tag IDs to tag the stream | No | [String] | n/a
 categoryIds | Categories to put the stream in | No | [String] | n/a
 
 <aside class="notice">Stream type can not be updated.  Once a stream is created it's type is immutable.</aside>
-<aside class="notice">All categories can be removed by sending an empty category array (<code>"categories": []</code>)</aside>
+<aside class="notice">All categories or stream tags can be removed by sending an empty categoryIds or tagIds array (<code>"categoryIds": []</code>)</aside>
 <aside class="notice">If updating a secured source, all source fields must be sent (uri, username and password). If no username or password is supplied, but a source uri is, then any existing credentials will be removed.</aside>
 
 ### Response
