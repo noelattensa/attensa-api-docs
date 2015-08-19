@@ -81,6 +81,7 @@ curl -u username:password \
       "source": {
           "uri": "http://feeds.feedburner.com/dailyjs"
       },
+      "tagIds": ["54da78488ab02386a4658eee"],
       "title": "DailyJS",
       "type": "RSS",
       "_links": {
@@ -158,6 +159,7 @@ curl -u username:password \
       "source": {
           "uri": "http://feeds.feedburner.com/dailyjs"
       },
+      "tagIds": ["54da78488ab02386a4658eee"],
       "title": "DailyJS",
       "type": "RSS",
       "_links": {
@@ -243,6 +245,7 @@ curl -u username:password \
         "source": {
             "uri": "http://feeds.feedburner.com/dailyjs"
         },
+        "tagIds": ["54da78488ab02386a4658eee"],
         "title": "DailyJS",
         "type": "RSS",
         "_links": {
@@ -326,6 +329,7 @@ curl -u username:password \
         "source": {
             "uri": "http://feeds.feedburner.com/dailyjs"
         },
+        "tagIds": ["54da78488ab02386a4658eee"],
         "title": "DailyJS",
         "type": "RSS",
         "_links": {
