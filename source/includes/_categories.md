@@ -107,7 +107,7 @@ page | The page number to retrieve | No | Integer | 0
 published | Filter stream list to published or unpublished streams. Omit for all streams. | No | Boolean | `null`
 rows | Number of streams in each page | No | Integer | 20
 term | A search term to narrow the list of streams returned | No | String | `null`
-type | Filter results to a specific stream type | No | `ATTENSA_SEARCH`, `COLLECTION`, `RSS`, `TWITTER_SEARCH`, `XML` | `null`
+type | Filter results to a specific stream type | No | `ATTENSA_SEARCH`, `COLLECTION`, `PUBMED_SEARCH`, `RSS`, `TWITTER_SEARCH`, `XML` | `null`
 
 ### Response
 
@@ -185,7 +185,7 @@ page | The page number to retrieve | No | Integer | 0
 published | Filter stream list to published or unpublished streams. Omit for all streams. | No | Boolean | `null`
 rows | Number of streams in each page | No | Integer | 20
 term | A search term to narrow the list of streams returned | No | String | `null`
-type | Filter results to a specific stream type | No | `ATTENSA_SEARCH`, `COLLECTION`, `RSS`, `TWITTER_SEARCH`, `XML` | `null`
+type | Filter results to a specific stream type | No | `ATTENSA_SEARCH`, `COLLECTION`, `PUBMED_SEARCH`, `RSS`, `TWITTER_SEARCH`, `XML` | `null`
 
 ### Response
 
