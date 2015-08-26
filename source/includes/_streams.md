@@ -72,7 +72,7 @@ page | The page number to retrieve | No | Integer | 0
 published | Filter stream list to published or unpublished streams. Omit for all streams. | No | Boolean | `null`
 rows | Number of streams in each page | No | Integer | 20
 term | A search term to narrow the list of streams returned | No | String | `null`
-type | Filter results to a specific stream type | No | `ATTENSA_SEARCH`, `COLLECTION`, `RSS`, `TWITTER_SEARCH`, `XML` | `null`
+type | Filter results to a specific stream type | No | `ATTENSA_SEARCH`, `COLLECTION`, `PUBMED_SEARCH`, `RSS`, `TWITTER_SEARCH`, `XML` | `null`
 
 ### Response
 
@@ -256,8 +256,8 @@ Parameter | Description | Required | Format | Default
 title | Stream Title | Yes | String | n/a
 description | Stream description | No | String | `null`
 ownerId | User id of stream owner | Yes | String of valid user id | n/a
-type | Stream type | Yes | `ATTENSA_SEARCH`, `COLLECTION`, `RSS`, `TWITTER_SEARCH` | n/a
-source:search | Search term. Only supply for ATTENSA_SEARCH or TWITTER_SEARCH streams | For type ATTENSA_SEARCH, TWITTER_SEARCH | String | `null`
+type | Stream type | Yes | `ATTENSA_SEARCH`, `COLLECTION`, `PUBMED_SEARCH`, `RSS`, `TWITTER_SEARCH` | n/a
+source:search | Search term. Only supply for ATTENSA_SEARCH, PUBMED_SEARCH or TWITTER_SEARCH streams | For type ATTENSA_SEARCH, PUBMED_SEARCH, TWITTER_SEARCH | String | `null`
 source:uri | Uri of rss feed. Only supply for type RSS streams | For type RSS | String | `null`
 source:username | Basic auth username for secured rss feed. Only supply for type RSS streams. | For secured RSS streams | String | `null`
 source:password | Basic auth password for secured rss feed. Only supply for type RSS streams. | For secured RSS streams | String | `null`
@@ -504,7 +504,7 @@ Parameter | Description | Required | Format | Default
 title | Stream Title | No | String | n/a
 description | Stream description | No | String | n/a
 ownerId | User id of stream owner | No | String of valid user id | n/a
-source:search | Search term. Only supply for ATTENSA_SEARCH or TWITTER_SEARCH streams | No | String | n/a
+source:search | Search term. Only supply for ATTENSA_SEARCH, PUBMED_SEARCH or TWITTER_SEARCH streams | No | String | n/a
 source:uri | Uri of rss feed. Only supply for type RSS streams | No | String | n/a
 source:username | Basic auth username for secured rss feed. Only supply for type RSS streams. | No | String | n/a
 source:password | Basic auth password for secured rss feed. Only supply for type RSS streams. | No | String | n/a
