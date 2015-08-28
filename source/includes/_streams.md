@@ -6,13 +6,14 @@ Attensa supports the following stream types
 
 Type | Description | Can create | Can search
 --------- | ----------- | -------- | ------ | -------
-COLLECTION | A combination stream composed of items from other streams | Yes | Yes
-RSS | Content from an RSS feed | Yes | Yes
 ATTENSA_SEARCH | Composed based on a search of items in other streams in Attensa | Yes | Yes
-TWITTER_SEARCH | Content based on a twitter search | Yes | Yes
-PUBMED_SEARCH | Content from PubMed | Yes | Yes
+BING_SEARCH | Bing search results for either web or news search | Yes | Yes
 CLINICALTRIALS_SEARCH | Content from clinicaltrials.gov | Yes | Yes
+COLLECTION | A combination stream composed of items from other streams | Yes | Yes
 FACTIVA_SELECT_HTTP | Content from a Factiva Select feed | No | Yes
+PUBMED_SEARCH | Content from PubMed | Yes | Yes
+RSS | Content from an RSS feed | Yes | Yes
+TWITTER_SEARCH | Content based on a twitter search | Yes | Yes
 
 ## GET /streams
 
@@ -273,6 +274,7 @@ ownerId | User id of stream owner | Yes | String of valid user id | n/a
 type | Stream type | Yes | [creatable stream type](#stream-types) | n/a
 source:search | Search term. Only supply for ATTENSA_SEARCH, PUBMED_SEARCH or TWITTER_SEARCH streams | For type ATTENSA_SEARCH, PUBMED_SEARCH, TWITTER_SEARCH | String | `null`
 source:uri | Uri of rss feed. Only supply for type RSS streams | For type RSS | String | `null`
+source:type | Specify web or news search for BING_SEARCH streams | For type BING_SEARCH | `WEB` or `NEWS` | n/a
 source:username | Basic auth username for secured rss feed. Only supply for type RSS streams. | For secured RSS streams | String | `null`
 source:password | Basic auth password for secured rss feed. Only supply for type RSS streams. | For secured RSS streams | String | `null`
 emailPostingEnabled | Allow posting to COLLECTION stream via email. | No | Boolean | false
