@@ -561,3 +561,22 @@ Delete an existing stream from the system.  All users will be un-followed and un
 ### Response
 
 Status code `204` with empty body
+
+## DELETE /streams/{streamId}/streams/{substreamId}
+
+```shell
+curl -u username:password \
+     -X DELETE \
+     https://api.attensa.net/streams/{streamId}/streams/{substreamId}
+```
+> 204 emtpy body returned on success
+
+Remove a substream from an existing COLLECTION stream.
+
+### Request
+
+`DELETE https://api.attensa.net/streams/{streamId}/streams/{substreamId}`
+
+### Response
+
+Status code `204` with empty body
