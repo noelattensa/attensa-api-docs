@@ -438,3 +438,21 @@ This endpoint deletes an existing user
 ### Response
 
 Status code `204`, empty body
+
+## DELETE /user/{userId}/streams/{streamId}
+
+```shell
+curl -u username:password \
+     -X DELETE \
+     https://api.attensa.net/users/{userId}/streams/{streamId}
+```
+
+This endpoint unfollows and unsubscribes a user from a stream.
+
+### Request
+
+`DELETE https://api.attensa.com/users/{userId}/streams/{streamId}`
+
+### Response
+
+Status code `204`, empty body
