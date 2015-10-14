@@ -86,6 +86,8 @@ Parameter | Description | Required | Format | Default
 page | The page number to retrieve | No | Integer | 0
 published | Filter stream list to published or unpublished streams. Omit for all streams. | No | Boolean | `null`
 rows | Number of streams in each page | No | Integer | 20
+source.search | Term used for search based stream types (TWITTER_SEARCH, etc) | No | String | `null`
+source.uri | Uri of RSS feed for RSS streams | No | String | `null`
 term | A search term to narrow the list of streams returned | No | String | `null`
 type | Filter results to a specific stream type | No | [searchable stream type](#stream-types) | `null`
 
