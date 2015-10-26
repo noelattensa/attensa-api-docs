@@ -205,6 +205,69 @@ Get briefing information for a specific stream
 
 Status code `200`
 
+## GET /streams/{streamId}/users
+
+```shell
+curl -u username:password https://api.attensa.net/streams/{streamId}/users
+```
+> Status code 200 with json structured as follows:
+
+```json
+{
+  "_links": {
+    "first": "https://api.attensa.net/streams/55245b56e4b0db8a310d8767/users?page=0",
+    "last": "https://api.attensa.net/streams/55245b56e4b0db8a310d8767/users?page=1",
+    "next": "https://api.attensa.net/streams/55245b56e4b0db8a310d8767/users?page=1"
+  },
+  "_paging": {
+    "elementCount": 20,
+    "page": 0,
+    "pageCount": 2,
+    "requestedPageSize": 20,
+    "totalElementCount": 34
+  },
+  "users": [
+    {
+      "_links": {
+        "self": "https://pi.attensa.net/users/5421903ae4b0fd12d843a219"
+      },
+      "emailAddress": "test@attensa.com",
+      "firstName": "Adam",
+      "id": "5421903ae4b0fd12d843a219",
+      "lastName": "Test",
+      "middleName": "J",
+      "status": "ACTIVE",
+      "suffix": "SR",
+      "timeZone": "US/Pacific",
+      "userIsFollowing": false,
+      "userIsFollowingViaGroup": true,
+      "userIsSubscribed": false,
+      "userIsSubscribedViaGroup": false
+    }
+  ]
+}
+```
+
+Get users that are following/subscribed to a specific stream
+
+### Request
+
+`GET https://api.attensa.net/streams/{streamId}/users`
+
+### Request query parameters
+
+Parameter | Description | Required | Format | Default
+--------- | ----------- | -------- | ------ | -------
+page | The page number to retrieve | No | Integer | 0
+rows | Number of users in each page | No | Integer | 20
+term | A search term to narrow the list of users returned | No | String | `null`
+sort | Field to sort the results on | No | firstName, lastName or emailAddress | emailAddress
+sortDirection | Sort ascending or descending | No | ASC or DESC | ASC
+
+### Response
+
+Status code `200`
+
 ## POST /streams
 
 ```shell
