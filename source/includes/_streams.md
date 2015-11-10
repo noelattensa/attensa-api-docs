@@ -282,11 +282,10 @@ curl -u username:password \
        "source": {
            "uri": "http://slashdot.org/rss",
            "username": "myUserNameForSecuredRSSFeed",
-           "password": "myPasswordForSecuredRSSFeed",
+           "password": "myPasswordForSecuredRSSFeed"
        },
        "emailPostingEnabled": false,
        "openForReading": true,
-       "openForPosting": true,
        "rssEnabled": false,
        "tagIds": ["54da78488ab02386a4658eee"],
        "categoryIds" : ["55414a36e4b0436b6280e668"]
@@ -531,12 +530,11 @@ curl -u username:password \
        "source": {
            "uri": "http://slashdot.org/rss",
            "username": "myUserNameForSecuredRSSFeed",
-           "password": "myPasswordForSecuredRSSFeed",
+           "password": "myPasswordForSecuredRSSFeed"
        },
        "emailPostingEnabled": false,
        "streamEmailAddress": "test.stream.01@email.attensa.net",
        "openForReading": true,
-       "openForPosting": true,
        "rssEnabled": false,
        "tagIds": ["54da78488ab02386a4658eee"],
        "categoryIds" : ["55414a36e4b0436b6280e668"]
