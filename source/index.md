@@ -15,6 +15,7 @@ includes:
   - streamTags
   - users
   - paging
+  - templatedata
   - timezones
 ---
 
