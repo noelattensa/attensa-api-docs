@@ -3,6 +3,17 @@ Attensa API documentation
 
 This is the [Attensa](http://www.attensa.com) API documentation, based on the wonderful [Slate](https://github.com/tripit/slate)
 
+Deploymnet
+------------
+
+```
+git pull --rebase
+rake build
+rake publish
+```
+
+Changes will then show up on http://attensadev.github.io/attensa-api-docs.
+
 Development
 ------------
 
