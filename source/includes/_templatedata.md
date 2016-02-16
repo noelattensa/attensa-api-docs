@@ -19,18 +19,18 @@ These are all the items in the briefing, with standard item data, plus the follo
 
 ### `stream` : 
 
-* `{{stream.followersCount}}`: A link to the content's original source.
-* `{{stream.publishedDate}}`: The full name of the author of the item. 
-* `{{itemCount}}`: This will display the full text of the item description.
+* `{{stream.followersCount}}`: The number of followers following that a stream.
+* `{{stream.publishedDate}}`: The stream's published date.
+* `{{itemsCount}}`: This will display the amount of items in a stream. 
 * `{{indexedStreams}}`: The first level of non-empty streams under a topic, with the following:
 * `{{streamID}}`: Returns the stream's ID.
-* `{{streamTitle}}`: The title of the item.
+* `{{streamTitle}}`: The title of the stream.
 * `{{streamDescription}}`: A link to the content of the item in the Attensa reading view.
 
 ### `briefing` : 
 
 * `{{briefing.description}}`: The briefing's description.
-* `{{viewAsHTML}}`: A link to the HTML version of the briefing.
+* `{{viewAsHTML}}`: A link to the HTML version of the briefing inside of Attensa.
 * `{{totalNewItems}}`: Is the count of items added since the last briefing was sent. 
 
 ### Topic View:
@@ -38,4 +38,4 @@ These are all the items in the briefing, with standard item data, plus the follo
 * `{{topicView}}`: A link to the topic view.
 * `{{indexedTopicView}}`: A link to the new topic view with an index displayed.
 * `{{noNavTopicView}}`: A link to the new topic view with no navigation displayed.
-* `{{noNavIndexedTopicView}}`: A link to the new topic view with an index, but no navigation displayed.
+* `{{noNavIndexedTopicView}}`: A link to the new topic view with the index displayed but no navigation displayed.
