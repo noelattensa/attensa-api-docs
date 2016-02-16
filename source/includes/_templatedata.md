@@ -13,8 +13,8 @@ These are all the items in the briefing, with standard item data, plus the follo
 * `{{sourceLink}}`: A link to the content's original source.
 * `{{author}}`: The full name of the author of the item. 
 * `{{defaultDescription}}`: This will display the full text of the item description.
-* `{{cleanDescription}}`: This variable will display the same text as defaultDescription with any HTML stripped off.
-* `{{shortDescription}}`: This variable will display the same text as cleanDescription with a limitation to 200 characters.
+* `{{cleanDescription}}`: This will display the same text as defaultDescription with any HTML stripped off.
+* `{{shortDescription}}`: This will display the same text as cleanDescription with a limitation to 200 characters.
 * `{{publishedDate}}`: This will display the item’s published date.
 
 ### `stream` : 
@@ -31,11 +31,11 @@ These are all the items in the briefing, with standard item data, plus the follo
 
 * `{{briefing.description}}`: The briefing's description.
 * `{{viewAsHTML}}`: A link to the HTML version of the briefing inside of Attensa.
-* `{{totalNewItems}}`: Is the count of items added since the last briefing was sent. 
+* `{{totalNewItems}}`: The count of items added since the last briefing was sent. 
 
 ### Topic View:
 
 * `{{topicView}}`: A link to the topic view.
-* `{{indexedTopicView}}`: A link to the new topic view with an index displayed.
+* `{{indexedTopicView}}`: A link to the new topic view with the index displayed.
 * `{{noNavTopicView}}`: A link to the new topic view with no navigation displayed.
 * `{{noNavIndexedTopicView}}`: A link to the new topic view with the index displayed but no navigation displayed.
