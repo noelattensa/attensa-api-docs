@@ -3544,20 +3544,20 @@ Categories can be moved from the top level down to sub-categories and vice versa
 <li><code class="prettyprint">{{sourceLink}}</code>: A link to the content&rsquo;s original source.</li>
 <li><code class="prettyprint">{{author}}</code>: The full name of the author of the item. </li>
 <li><code class="prettyprint">{{defaultDescription}}</code>: This will display the full text of the item description.</li>
-<li><code class="prettyprint">{{cleanDescription}}</code>: This variable will display the same text as defaultDescription with any HTML stripped off.</li>
-<li><code class="prettyprint">{{shortDescription}}</code>: This variable will display the same text as cleanDescription with a limitation to 200 characters.</li>
+<li><code class="prettyprint">{{cleanDescription}}</code>: This will display the same text as defaultDescription with any HTML stripped off.</li>
+<li><code class="prettyprint">{{shortDescription}}</code>: This will display the same text as cleanDescription with a limitation to 200 characters.</li>
 <li><code class="prettyprint">{{publishedDate}}</code>: This will display the item’s published date.</li>
 </ul>
 
 <h3 id="stream"><code class="prettyprint">stream</code> :</h3>
 
 <ul>
-<li><code class="prettyprint">{{stream.followersCount}}</code>: A link to the content&rsquo;s original source.</li>
-<li><code class="prettyprint">{{stream.publishedDate}}</code>: The full name of the author of the item. </li>
-<li><code class="prettyprint">{{itemCount}}</code>: This will display the full text of the item description.</li>
+<li><code class="prettyprint">{{stream.followersCount}}</code>: The number of followers following that a stream.</li>
+<li><code class="prettyprint">{{stream.publishedDate}}</code>: The stream&rsquo;s published date.</li>
+<li><code class="prettyprint">{{itemsCount}}</code>: This will display the amount of items in a stream. </li>
 <li><code class="prettyprint">{{indexedStreams}}</code>: The first level of non-empty streams under a topic, with the following:</li>
 <li><code class="prettyprint">{{streamID}}</code>: Returns the stream&rsquo;s ID.</li>
-<li><code class="prettyprint">{{streamTitle}}</code>: The title of the item.</li>
+<li><code class="prettyprint">{{streamTitle}}</code>: The title of the stream.</li>
 <li><code class="prettyprint">{{streamDescription}}</code>: A link to the content of the item in the Attensa reading view.</li>
 </ul>
 
@@ -3565,17 +3565,17 @@ Categories can be moved from the top level down to sub-categories and vice versa
 
 <ul>
 <li><code class="prettyprint">{{briefing.description}}</code>: The briefing&rsquo;s description.</li>
-<li><code class="prettyprint">{{viewAsHTML}}</code>: A link to the HTML version of the briefing.</li>
-<li><code class="prettyprint">{{totalNewItems}}</code>: Is the count of items added since the last briefing was sent. </li>
+<li><code class="prettyprint">{{viewAsHTML}}</code>: A link to the HTML version of the briefing inside of Attensa.</li>
+<li><code class="prettyprint">{{totalNewItems}}</code>: The count of items added since the last briefing was sent. </li>
 </ul>
 
 <h3 id="topic-view">Topic View:</h3>
 
 <ul>
 <li><code class="prettyprint">{{topicView}}</code>: A link to the topic view.</li>
-<li><code class="prettyprint">{{indexedTopicView}}</code>: A link to the new topic view with an index displayed.</li>
+<li><code class="prettyprint">{{indexedTopicView}}</code>: A link to the new topic view with the index displayed.</li>
 <li><code class="prettyprint">{{noNavTopicView}}</code>: A link to the new topic view with no navigation displayed.</li>
-<li><code class="prettyprint">{{noNavIndexedTopicView}}</code>: A link to the new topic view with an index, but no navigation displayed.</li>
+<li><code class="prettyprint">{{noNavIndexedTopicView}}</code>: A link to the new topic view with the index displayed but no navigation displayed.</li>
 </ul>
 
           <h1 id="time-zones">Time Zones</h1>
