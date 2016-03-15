@@ -29,6 +29,7 @@ These are all the items in the briefing, with standard item data, plus the follo
 
 ### `briefing` : 
 
+* `{{briefing.templateTitle}}`: The title text for the briefing's template. 
 * `{{briefing.description}}`: The briefing's description.
 * `{{viewAsHTML}}`: A link to the HTML version of the briefing inside of Attensa.
 * `{{totalNewItems}}`: The count of items added since the last briefing was sent. 
