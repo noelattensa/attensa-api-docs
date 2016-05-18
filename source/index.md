@@ -13,6 +13,7 @@ includes:
   - groups
   - streams
   - streamTags
+  - reports
   - users
   - paging
   - templatedata
@@ -30,4 +31,5 @@ The Attensa API helps you manage your users and streams outside of our web inter
 * **Groups** - Get and set up user groups, including the streams and briefings a group subscribes to.
 * **Streams** - Create streams, get information about them post new items into streams.
 * **Stream Tags** - Tag streams with labels and find them later.
+* **Reports** - Retrive a list of downloadable weekly reports on user activity.
 * **Users** - Set up new users, get information about users and subscribe users to streams.
