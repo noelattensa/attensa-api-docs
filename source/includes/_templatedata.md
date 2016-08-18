@@ -11,6 +11,7 @@ These are all the items in the briefing, with standard item data, plus the follo
 * `{{title}}`: The title of the item.
 * `{{link}}`: A link to the content of the item in the Attensa reading view.
 * `{{sourceLink}}`: A link to the content's original source.
+* `{{linkResolverLink}}`: Provides a link resolver link for the article if one exists.
 * `{{author}}`: The full name of the author of the item. 
 * `{{defaultDescription}}`: This will display the full text of the item description.
 * `{{cleanDescription}}`: This will display the same text as defaultDescription with any HTML stripped off.
@@ -25,7 +26,7 @@ These are all the items in the briefing, with standard item data, plus the follo
 * `{{indexedStreams}}`: The first level of non-empty streams under a topic, with the following:
 * `{{streamID}}`: Returns the stream's ID.
 * `{{streamTitle}}`: The title of the stream.
-* `{{streamDescription}}`: A link to the content of the item in the Attensa reading view.
+* `{{streamDescription}}`: This will display the stream's description.
 
 ### `briefing` : 
 
